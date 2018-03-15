@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>VS Code 快速获取七牛图床外链 | CMF | Blog | Just Do IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="工具,VS Code,七牛">
+    <meta name="description" content="前言使用 Markdown 编写文档时，难免会遇到插入本地图片的场景，在本地编辑时，插入图片的本地链接，是可以显示的，但是当文件更改路径后，就会出现找不到图片的现象，因此需要将图片通过图床工具上传到七牛空间，获取外链后复制到文档中。这里我们使用 VS Code 安装插件来快速获取七牛图床外链。 下载第一步：进入 Visual Studio Code 官网进行下载">
+<meta name="keywords" content="工具,VS Code,七牛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VS Code 快速获取七牛图床外链">
+<meta property="og:url" content="https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/index.html">
+<meta property="og:site_name" content="CMF | Blog">
+<meta property="og:description" content="前言使用 Markdown 编写文档时，难免会遇到插入本地图片的场景，在本地编辑时，插入图片的本地链接，是可以显示的，但是当文件更改路径后，就会出现找不到图片的现象，因此需要将图片通过图床工具上传到七牛空间，获取外链后复制到文档中。这里我们使用 VS Code 安装插件来快速获取七牛图床外链。 下载第一步：进入 Visual Studio Code 官网进行下载">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/59696693.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/19617153.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/37514216.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/10611652.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/59945320.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/60232746.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/44421188.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/76981211.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/44440233.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/24757255.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/25690353.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/55374758.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/72792983.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/9943671.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/64638715.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/45102119.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/99710499.jpg">
+<meta property="og:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/29027663.jpg">
+<meta property="og:updated_time" content="2017-07-08T14:00:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VS Code 快速获取七牛图床外链">
+<meta name="twitter:description" content="前言使用 Markdown 编写文档时，难免会遇到插入本地图片的场景，在本地编辑时，插入图片的本地链接，是可以显示的，但是当文件更改路径后，就会出现找不到图片的现象，因此需要将图片通过图床工具上传到七牛空间，获取外链后复制到文档中。这里我们使用 VS Code 安装插件来快速获取七牛图床外链。 下载第一步：进入 Visual Studio Code 官网进行下载">
+<meta name="twitter:image" content="http://on3f2smuc.bkt.clouddn.com/17-6-18/59696693.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CMF</h5>
+          <a href="mailto:mingfengst@163.com" title="mingfengst@163.com" class="mail">mingfengst@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://cn.vuejs.org" target="_blank" >
+                <i class="icon icon-lg icon-star"></i>
+                Vue
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://reactjs.org" target="_blank" >
+                <i class="icon icon-lg icon-flag"></i>
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                Custom
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">VS Code 快速获取七牛图床外链</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">VS Code 快速获取七牛图床外链</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-19T12:27:17.000Z" itemprop="datePublished" class="page-time">
+  2017-06-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/工具/">工具</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#qiniu-upload-image-插件安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">qiniu-upload-image 插件安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vs-code-get-qiniu-img-url"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">VS Code 快速获取七牛图床外链</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-06-19 20:27:17" datetime="2017-06-19T12:27:17.000Z"  itemprop="datePublished">2017-06-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/工具/">工具</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用 Markdown 编写文档时，难免会遇到插入本地图片的场景，在本地编辑时，插入图片的本地链接，是可以显示的，但是当文件更改路径后，就会出现找不到图片的现象，因此需要将图片通过图床工具上传到<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛空间</a>，获取外链后复制到文档中。这里我们使用 VS Code 安装插件来快速获取七牛图床外链。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>第一步：进入 <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code 官网</a>进行下载</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/59696693.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第二步：选择你的电脑操作系统平台，下载合适的安装包</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/19617153.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>第一步：双击下载的安装包，进入安装向导界面，点击下一步</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/37514216.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第二步：进入许可协议，点击”我接收协议“选项，点击下一步</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/10611652.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第三步：选择目标位置，就是你想把软件安装在哪个目录，选择合适的目录后继续点击下一步</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/59945320.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第四步：在开始菜单文件夹中创建快捷方式，可以默认选项，点击下一步</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/60232746.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第五步：进入选择其他任务界面，建议保留默认选项，同时也可以选择将打开方式添加到鼠标右键菜单中（勾选“其他”中的第一选项），继续点击下一步</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/44421188.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第六步：直接点击安装，几秒后，即可安装完成</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/76981211.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/44440233.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第七步：点击完成，即可启动 Visual Studio Code</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/24757255.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第八步：VS Code 启动的界面</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/25690353.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="qiniu-upload-image-插件安装"><a href="#qiniu-upload-image-插件安装" class="headerlink" title="qiniu-upload-image 插件安装"></a>qiniu-upload-image 插件安装</h2><p>第一步：在 VS Code 界面使用快捷方式<code>Ctrl+P</code>并输入以下命令，回车</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ext install qiniu-upload-image</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/55374758.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第二步：点击安装</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/72792983.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第三步：安装完成后，需要点击重新加载以激活扩展</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/9943671.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第四步：打开”文件 - 首选项 - 设置“，可见多了<code>qiniu configuration</code>这项，点击左侧的图标进行编辑</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/64638715.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第五步：配置项的介绍</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    // 插件开关</span><br><span class="line">    "qiniu.enable": true,</span><br><span class="line"></span><br><span class="line">    // 一个有效的七牛 AccessKey 签名授权</span><br><span class="line">    "qiniu.access_key": "*****************************************",</span><br><span class="line"></span><br><span class="line">    // 一个有效的七牛 SecretKey 签名授权</span><br><span class="line">    "qiniu.secret_key": "*****************************************",</span><br><span class="line"></span><br><span class="line">    // 七牛图片上传空间</span><br><span class="line">    "qiniu.bucket": "image",</span><br><span class="line"></span><br><span class="line">    // 七牛图片上传路径，参数化命名，暂时支持 $&#123;fileName&#125;、$&#123;mdFileName&#125;、$&#123;date&#125;、$&#123;dateTime&#125;</span><br><span class="line">    // 示例：</span><br><span class="line">    //   $&#123;fileName&#125;-$&#123;date&#125; -&gt; picName-20160725.jpg</span><br><span class="line">    //   $&#123;mdFileName&#125;-$&#123;dateTime&#125; -&gt; markdownName-20170412222810.jpg</span><br><span class="line">    "qiniu.remotePath": "$&#123;fileName&#125;",</span><br><span class="line"></span><br><span class="line">    // 七牛图床域名</span><br><span class="line">    "qiniu.domain": "http://xxxxx.xxxx.com"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第六步：登录<a href="http://jiantuku.com/#/" target="_blank" rel="noopener">极简图床</a>，点击齿轮图标，切换到”自定义七牛空间”项</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/45102119.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第七步：将以上相关信息复制到<code>qiniu configuration</code>配置中并保存即可（有的需要重启软件）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/99710499.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>第八步：复制要上传的本地图片链接，输入快捷方式<code>Ctrl+Q</code>启动，粘贴并回车，即可将图片插入到光标所在处</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://on3f2smuc.bkt.clouddn.com/17-6-18/29027663.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<blockquote>
+<p>Tips: 只有在编辑 Markdown 时插件才可使用，启动快捷键<code>Ctrl+Q</code>。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/yscoder/vscode-qiniu-upload-image" target="_blank" rel="noopener">一个 VS Code 插件，写 Markdown 时可以快捷上传本地图片获取七牛图床外链</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        转载请注明出处：<a href="/blog/2017/vs-code-get-qiniu-img-url/" target="_blank" rel="external">https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://mingfengst.github.io/blog">
+            <img src="/blog/img/avatar.jpg" alt="CMF">
+            CMF
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/VS-Code/">VS Code</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/七牛/">七牛</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/工具/">工具</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/&title=《VS Code 快速获取七牛图床外链》 — CMF | Blog&pic=https://mingfengst.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/&title=《VS Code 快速获取七牛图床外链》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VS Code 快速获取七牛图床外链》 — CMF | Blog&url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/&via=https://mingfengst.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2015/chrome-dev-tools/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Chrome 开发者工具</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Just Do IT
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>CMF &copy; 2014 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/&title=《VS Code 快速获取七牛图床外链》 — CMF | Blog&pic=https://mingfengst.github.io/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/&title=《VS Code 快速获取七牛图床外链》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VS Code 快速获取七牛图床外链》 — CMF | Blog&url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/&via=https://mingfengst.github.io/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/blog/2017/vs-code-get-qiniu-img-url/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3aS3LdMAwEQN3/0s4BEskzAGW/VLVWrqcfmwuBHuK64uPr5kjuev7l79/v3pK8cXjg4eHhHRr63SuToT9fn7yxnYLbJ+Dh4eG9xksedzf0/MucnL2buKRI4OHh4X0m77motKT2Sjw8PLz/kfcVHDm+Xabj4eHhfQ4vGWi+aE6ek1yfP/9A1oKHh4c3SUqjraxP+PuV/T08PDy89a56Hha05WFWkOrR4uHh4b3Ayz+4eVDbNhzMYuJisw0PDw/vBd4sJthsYm0K0iwOxsPDwzvLS2LTTUtBe+9mWy56EB4eHt6Cl3/Qk+V1W2aSs7O0Fg8PD+9tXv7o9pokup2VqGgK8PDw8F7jtRFq20TVLpHbZ0b7e3h4eHhHeXk0MFuCtwv0Np6ok2k8PDy8BW/2md4smvP3zsKIIrHGw8PDO8rbtGG1V8622fKzeHh4eGd5+T//+Qy14ULy3rY9Cw8PD+89XhSGPi6X8y2xZAr2ba9XexseHh5eycs37/fhbxsrtMHuN01XeHh4eC/wNttXV3m05aRd0N+2DuDh4eGtec83z4KA/Jt8qsXqm6KCh4eH9wIvvzmPG/Ih5mUgKV3Fah0PDw9vxDv7sc6D2jwUXjUx4OHh4b3Ay4PU2XJ2FsjOoo1h9cPDw8M7ynu++VTDQRvmzgoVHh4e3lleO8S8paCdrFkZGPaU4eHh4a15+xarfBB58WgX+nh4eHg/yWs3pWaf6Ta0bUOKqGkADw8Pb8E71VbVFpjZBNVn8fDw8F7gtR/cWRS731o7FWTg4eHhneK1zU+zkHdWVNqygYeHh/eTvDze3Wz5txMxy1f+EUng4eHh/SrvGZk0Re0LTBEf4+Hh4X0YL9+sytltCBKFEXh4eHgv8PK2p7YVoN2USqapLgx4eHh4R3ntK/ctU6cKw3XqwMPDw0t5fwB1IlS50eZwZAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '等着你回来！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
