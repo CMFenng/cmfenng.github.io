@@ -3,11 +3,11 @@
   <title>CMF | Blog</title>
   
   <subtitle>Just Do IT</subtitle>
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://mingfengst.github.io/blog/"/>
+  <link href="https://mingfengst.github.io/"/>
   <updated>2017-07-08T14:00:01.000Z</updated>
-  <id>https://mingfengst.github.io/blog/</id>
+  <id>https://mingfengst.github.io/</id>
   
   <author>
     <name>CMF</name>
@@ -34,14 +34,14 @@
     
     </summary>
     
-      <category term="工具" scheme="https://mingfengst.github.io/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://mingfengst.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="工具" scheme="https://mingfengst.github.io/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://mingfengst.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="VS Code" scheme="https://mingfengst.github.io/blog/tags/VS-Code/"/>
+      <category term="VS Code" scheme="https://mingfengst.github.io/tags/VS-Code/"/>
     
-      <category term="七牛" scheme="https://mingfengst.github.io/blog/tags/%E4%B8%83%E7%89%9B/"/>
+      <category term="七牛" scheme="https://mingfengst.github.io/tags/%E4%B8%83%E7%89%9B/"/>
     
   </entry>
   
@@ -63,12 +63,12 @@
     
     </summary>
     
-      <category term="工具" scheme="https://mingfengst.github.io/blog/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://mingfengst.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="工具" scheme="https://mingfengst.github.io/blog/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://mingfengst.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="Chrome" scheme="https://mingfengst.github.io/blog/tags/Chrome/"/>
+      <category term="Chrome" scheme="https://mingfengst.github.io/tags/Chrome/"/>
     
   </entry>
   
@@ -90,10 +90,10 @@
     
     </summary>
     
-      <category term="前端" scheme="https://mingfengst.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://mingfengst.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="命名规范" scheme="https://mingfengst.github.io/blog/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
+      <category term="命名规范" scheme="https://mingfengst.github.io/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/"/>
     
   </entry>
   
@@ -116,11 +116,11 @@
     </summary>
     
     
-      <category term="Hexo" scheme="https://mingfengst.github.io/blog/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://mingfengst.github.io/tags/Hexo/"/>
     
-      <category term="GitHub" scheme="https://mingfengst.github.io/blog/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://mingfengst.github.io/tags/GitHub/"/>
     
-      <category term="博客" scheme="https://mingfengst.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://mingfengst.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
