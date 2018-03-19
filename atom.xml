@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mingfengst.github.io/"/>
-  <updated>2017-06-18T12:54:18.000Z</updated>
+  <updated>2018-03-19T14:34:35.533Z</updated>
   <id>https://mingfengst.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node</title>
+    <link href="https://mingfengst.github.io/posts/2014/node/"/>
+    <id>https://mingfengst.github.io/posts/2014/node/</id>
+    <published>2014-06-18T14:22:46.000Z</published>
+    <updated>2018-03-19T14:34:35.533Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Node-安装"><a href="#Node-安装" class="headerlink" title="Node 安装"></a>Node 安装</h2><p>到 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node 官网</a> 获取安装包。</p><p>检查是否安装成功，能获取到对应版本号，则说明安装成功。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure><p>安装 cnpm，如有权限问题，使用 sudo 安装。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo npm install -g cnpm</span><br></pre></td></tr></table></figure><h2 id="Node-常用命令"><a href="#Node-常用命令" class="headerlink" title="Node 常用命令"></a>Node 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 node 的版本号</span></span><br><span class="line">$ node -v</span><br><span class="line"><span class="comment"># 查看 npm 的版本号</span></span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Node-安装&quot;&gt;&lt;a href=&quot;#Node-安装&quot; class=&quot;headerlink&quot; title=&quot;Node 安装&quot;&gt;&lt;/a&gt;Node 安装&lt;/h2&gt;&lt;p&gt;到 &lt;a href=&quot;https://nodejs.org/&quot; target=&quot;_blank&quot; re
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://mingfengst.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="开发环境" scheme="https://mingfengst.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+      <category term="node" scheme="https://mingfengst.github.io/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git</title>
+    <link href="https://mingfengst.github.io/posts/2014/git/"/>
+    <id>https://mingfengst.github.io/posts/2014/git/</id>
+    <published>2014-06-18T11:38:05.000Z</published>
+    <updated>2018-03-19T14:34:43.482Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Git-安装"><a href="#Git-安装" class="headerlink" title="Git 安装"></a>Git 安装</h2><p>到 <a href="https://git-scm.com/" target="_blank" rel="noopener">Git 官网</a> 获取安装包。</p><p>检查是否安装成功，能获取到对应版本号，则说明安装成功。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure><h2 id="Git-配置"><a href="#Git-配置" class="headerlink" title="Git 配置"></a>Git 配置</h2><p>设置用户</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"mingfengst"</span></span><br><span class="line">$ git config --global user.email <span class="string">"mingfengst@163.com"</span></span><br></pre></td></tr></table></figure><p>生成公钥密钥</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"mingfengst@163.com"</span></span><br><span class="line">  <span class="comment"># 设置保存的路径，密码（可直接回车跳过）</span></span><br><span class="line">  Generating public/private rsa key pair.</span><br><span class="line">  Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/cmf/.ssh/id_rsa):</span><br><span class="line">  Created directory <span class="string">'/Users/cmf/.ssh'</span>.</span><br><span class="line">  Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">  Enter same passphrase again:</span><br><span class="line">  Your identification has been saved <span class="keyword">in</span> /Users/cmf/.ssh/id_rsa.</span><br><span class="line">  Your public key has been saved <span class="keyword">in</span> /Users/cmf/.ssh/id_rsa.pub.</span><br><span class="line">  The key fingerprint is:</span><br><span class="line">  SHA256:zKpiD7O1hT9qTkjB1OXPp0eBvgVfpxKizdPwX7xZMVE mingfengst@163.com</span><br><span class="line">  The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">  +---[RSA 2048]----+</span></span><br><span class="line"><span class="string">  |  .. ..        .E|</span></span><br><span class="line"><span class="string">  | o  ..   .      .|</span></span><br><span class="line"><span class="string">  |  o   . = o . .o |</span></span><br><span class="line"><span class="string">  |   .   X B + +  o|</span></span><br><span class="line"><span class="string">  |  .   . S O . o .|</span></span><br><span class="line"><span class="string">  | . . . . B o . + |</span></span><br><span class="line"><span class="string">  |  + + o o . . o  |</span></span><br><span class="line"><span class="string">  |  o*.=.  .       |</span></span><br><span class="line"><span class="string">  | ..=*...         |</span></span><br><span class="line"><span class="string">  +----[SHA256]-----+</span></span><br></pre></td></tr></table></figure><h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 git 的版本号</span></span><br><span class="line">$ git --version</span><br><span class="line"><span class="comment"># 查看 git 的安装路径（Mac）</span></span><br><span class="line">$ <span class="built_in">which</span> git</span><br><span class="line"><span class="comment"># 查看 git 的安装路径（Win）</span></span><br><span class="line">$ <span class="built_in">where</span> git</span><br><span class="line"><span class="comment"># 克隆仓库，默认与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为第二个参数</span></span><br><span class="line">$ git <span class="built_in">clone</span> &lt;版本库地址&gt; &lt;本地目录名&gt;</span><br><span class="line"><span class="comment"># 查看分支</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 新建分支</span></span><br><span class="line">$ git branch &lt;分支名&gt;</span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">$ git checkout &lt;分支名&gt;</span><br><span class="line"><span class="comment"># 新建并切换到新分支</span></span><br><span class="line">$ git checkout -b &lt;分支名&gt;</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git add .</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git commit -m <span class="string">'提交备注'</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git push origin &lt;分支名&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Git-安装&quot;&gt;&lt;a href=&quot;#Git-安装&quot; class=&quot;headerlink&quot; title=&quot;Git 安装&quot;&gt;&lt;/a&gt;Git 安装&lt;/h2&gt;&lt;p&gt;到 &lt;a href=&quot;https://git-scm.com/&quot; target=&quot;_blank&quot; rel=&quot;
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://mingfengst.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="https://mingfengst.github.io/tags/git/"/>
+    
+      <category term="开发环境" scheme="https://mingfengst.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
