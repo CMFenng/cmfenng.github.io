@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Hexo+GitHub 搭建个人博客 | CMF | Blog | Just Do IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hexo,GitHub">
+    <meta name="description" content="前言Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文是一篇基于 GitHub Pages 的 Hexo 博客搭建教程。 准备安装前提安装 Hexo 相当简单。然而在安装前，先检查电脑中是否已安装下列应用程序：  Git Node.js  安装方法：参考文章 Git 的用法、Node 的用法。 检查">
+<meta name="keywords" content="Hexo,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+GitHub 搭建个人博客">
+<meta property="og:url" content="https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/index.html">
+<meta property="og:site_name" content="CMF | Blog">
+<meta property="og:description" content="前言Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文是一篇基于 GitHub Pages 的 Hexo 博客搭建教程。 准备安装前提安装 Hexo 相当简单。然而在安装前，先检查电脑中是否已安装下列应用程序：  Git Node.js  安装方法：参考文章 Git 的用法、Node 的用法。 检查">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-164955.jpg">
+<meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-165843.jpg">
+<meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-211146.jpg">
+<meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-221423.jpg">
+<meta property="og:updated_time" content="2018-03-21T09:14:56.054Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo+GitHub 搭建个人博客">
+<meta name="twitter:description" content="前言Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文是一篇基于 GitHub Pages 的 Hexo 博客搭建教程。 准备安装前提安装 Hexo 相当简单。然而在安装前，先检查电脑中是否已安装下列应用程序：  Git Node.js  安装方法：参考文章 Git 的用法、Node 的用法。 检查">
+<meta name="twitter:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-164955.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CMF</h5>
+          <a href="mailto:mingfengst@163.com" title="mingfengst@163.com" class="mail">mingfengst@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                Gitee
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://cn.vuejs.org" target="_blank" >
+                <i class="icon icon-lg icon-vimeo"></i>
+                Vue
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://reactjs.org" target="_blank" >
+                <i class="icon icon-lg icon-registered"></i>
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                Custom
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo+GitHub 搭建个人博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo+GitHub 搭建个人博客</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2014-06-19T06:20:16.000Z" itemprop="datePublished" class="page-time">
+  2014-06-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Web/">Web</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装前提"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装前提</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建-blog-仓库"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">创建 blog 仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开启-gh-pages"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">开启 gh-pages</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo-常用命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">Hexo 常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建-blog-项目"><span class="post-toc-number">5.</span> <span class="post-toc-text">创建 blog 项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署-blog-项目"><span class="post-toc-number">6.</span> <span class="post-toc-text">部署 blog 项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更改-blog-配置"><span class="post-toc-number">7.</span> <span class="post-toc-text">更改 blog 配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更换-blog-主题"><span class="post-toc-number">8.</span> <span class="post-toc-text">更换 blog 主题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题安装"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">主题安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换主题"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">切换主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖安装"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">依赖安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#less"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">less</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#feed"><span class="post-toc-number">8.3.2.</span> <span class="post-toc-text">feed</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#json-content"><span class="post-toc-number">8.3.3.</span> <span class="post-toc-text">json-content</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#QRCode"><span class="post-toc-number">8.3.4.</span> <span class="post-toc-text">QRCode</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开启标签页"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">开启标签页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开启分类页"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">开启分类页</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题配置"><span class="post-toc-number">8.6.</span> <span class="post-toc-text">主题配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#备份-blog-源码"><span class="post-toc-number">9.</span> <span class="post-toc-text">备份 blog 源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#克隆-blog-源码"><span class="post-toc-number">10.</span> <span class="post-toc-text">克隆 blog 源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#批处理"><span class="post-toc-number">11.</span> <span class="post-toc-text">批处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Q-amp-A"><span class="post-toc-number">12.</span> <span class="post-toc-text">Q&amp;A</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-blog-base-on-hexo-and-github"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo+GitHub 搭建个人博客</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2014-06-19 14:20:16" datetime="2014-06-19T06:20:16.000Z"  itemprop="datePublished">2014-06-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Web/">Web</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文是一篇基于 GitHub Pages 的 Hexo 博客搭建教程。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>安装 Hexo 相当简单。然而在安装前，先检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li><a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a></li>
+</ul>
+<p>安装方法：参考文章 <a href="/posts/2014/usage-git">Git 的用法</a>、<a href="/posts/2014/usage-node">Node 的用法</a>。</p>
+<p>检查方法：打开终端，依次输入以下命令，能获取到对应版本号，则说明安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 node 的版本号</span></span><br><span class="line">node -v</span><br><span class="line"><span class="comment"># 查看 npm 的版本号</span></span><br><span class="line">npm -v</span><br><span class="line"><span class="comment"># 查看 git 的版本号</span></span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<h3 id="创建-blog-仓库"><a href="#创建-blog-仓库" class="headerlink" title="创建 blog 仓库"></a>创建 blog 仓库</h3><p>登录 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 账号，点击页面右上角的 <code>+</code>，选择 New repository。</p>
+<p>博客仓库名必须是：username.github.io。比如我的博客仓库名是：<a href="https://mingfengst.github.io/">mingfengst.github.io</a>。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/Users/cmf/Desktop/essay/img/Jietu20180312-164955.jpg" alt="Jietu20180312-164955" title="">
+                </div>
+                <div class="image-caption">Jietu20180312-164955</div>
+            </figure>
+<h3 id="开启-gh-pages"><a href="#开启-gh-pages" class="headerlink" title="开启 gh-pages"></a>开启 gh-pages</h3><p>点击界面右侧的 Settings，将会打开这个库的 setting 页面，向下拖动，直到看见 GitHub Pages，点击 Automatic page generator，GitHub 将会自动替你创建出一个 gh-pages 的页面。如果配置没问题的话，username.github.io 这个网址就可以正常访问了。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/Users/cmf/Desktop/essay/img/Jietu20180312-165843.jpg" alt="Jietu20180312-165843" title="">
+                </div>
+                <div class="image-caption">Jietu20180312-165843</div>
+            </figure>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>如果电脑中已具备以上条件，那么只需要使用 npm 即可完成 Hexo 的全局安装。如有权限问题，使用 sudo 安装。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>检查是否安装成功，能获取到对应版本号，则说明安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 清空静态页面</span></span><br><span class="line">$ hexo clean</span><br><span class="line"><span class="comment"># 生成静态页面</span></span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo g</span><br><span class="line"><span class="comment"># 本地测试</span></span><br><span class="line">$ hexo server</span><br><span class="line">$ hexo s</span><br><span class="line"><span class="comment"># 部署</span></span><br><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="创建-blog-项目"><a href="#创建-blog-项目" class="headerlink" title="创建 blog 项目"></a>创建 blog 项目</h2><p>初始化 hexo 项目，文件名以 blog 为例。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init blog</span><br></pre></td></tr></table></figure>
+<p>进入 blog 目录</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>生成静态页面</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>本地启动测试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">  INFO  Start processing</span><br><span class="line">  INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/Users/cmf/Desktop/essay/img/Jietu20180312-211146.jpg" alt="Jietu20180312-211146" title="">
+                </div>
+                <div class="image-caption">Jietu20180312-211146</div>
+            </figure>
+<p>打开浏览器，地址栏中输入：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看见刚刚创建的博客了。</p>
+<h2 id="部署-blog-项目"><a href="#部署-blog-项目" class="headerlink" title="部署 blog 项目"></a>部署 blog 项目</h2><p>安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>修改 _config.yml 配置文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment"># 库（Repository）地址</span></span><br><span class="line">  repo: git@github.com:mingfengst/mingfengst.github.io.git</span><br><span class="line">  <span class="comment"># 分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。</span></span><br><span class="line">  branch: master</span><br><span class="line">  <span class="comment"># 自定义提交信息 (默认为 Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;)</span></span><br><span class="line">  message:</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<p>type: git 中的冒号后面有空格。</p>
+<p>将 repo 替换成自己的 repository。</p>
+</blockquote>
+<p>部署。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>打开浏览器，在地址栏输入 <a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a> 即可访问托管在 GitHub 上的博客。如我的博客地址是：<a href="https://mingfengst.github.io">https://mingfengst.github.io</a> 。</p>
+<h2 id="更改-blog-配置"><a href="#更改-blog-配置" class="headerlink" title="更改 blog 配置"></a>更改 blog 配置</h2><p><a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/configuration.html</a></p>
+<h2 id="更换-blog-主题"><a href="#更换-blog-主题" class="headerlink" title="更换 blog 主题"></a>更换 blog 主题</h2><p>以 <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">hexo-theme-indigo</a> 为例。</p>
+<h3 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h3><p>要求：Hexo 版本在 3.0 以上，Node 版本为 6.x 以上。</p>
+<p>进入 blog 目录，下载主题。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:yscoder/hexo-theme-indigo.git themes/indigo</span><br></pre></td></tr></table></figure>
+<h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>进入 themes/indigo 目录。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/indigo</span><br></pre></td></tr></table></figure>
+<p>执行 <code>git branch</code> 显示所有本地分支，如果只存在一个分支，可以执行下面的命令获取另一分支的主题。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">  * card</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取远程 card 分支，并切换</span></span><br><span class="line">$ git checkout -b card origin/card</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取远程 master 分支，并切换</span></span><br><span class="line">$ git checkout -b master origin/master</span><br></pre></td></tr></table></figure>
+<p>此命令只需执行一次，之后使用 <code>git checkout [branch]</code> 命令在两个主题之间切换。</p>
+<h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><p>回到 blog 目录。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
+<h4 id="less"><a href="#less" class="headerlink" title="less"></a>less</h4><p>主题默认使用 less 作为 css 预处理工具。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-renderer-less --save</span><br></pre></td></tr></table></figure>
+<h4 id="feed"><a href="#feed" class="headerlink" title="feed"></a>feed</h4><p><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a></p>
+<p>用于生成 rss。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<h4 id="json-content"><a href="#json-content" class="headerlink" title="json-content"></a>json-content</h4><p>用于生成静态站点数据，用作站内搜索的数据源。</p>
+<p>为了节约资源，可以对 jsonContent 插件生成的数据字段进行配置，减少数据文件大小。参考 <a href="https://github.com/alexbruno/hexo-generator-json-content" target="_blank" rel="noopener">hexo-generator-json-content</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
+<h4 id="QRCode"><a href="#QRCode" class="headerlink" title="QRCode"></a>QRCode</h4><p>用于生成微信分享二维码。可选，不安装时会请求 jiathis Api 生成二维码。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-helper-qrcode --save</span><br></pre></td></tr></table></figure>
+<h3 id="开启标签页"><a href="#开启标签页" class="headerlink" title="开启标签页"></a>开启标签页</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br><span class="line">  INFO  Created: ~/dev/blog/<span class="built_in">source</span>/tags/index.md</span><br></pre></td></tr></table></figure>
+<p>修改 <code>blog/source/tags/index.md</code> 的元数据</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2017-06-18 18:35:37</span><br><span class="line">layout: tags</span><br><span class="line">comments: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="开启分类页"><a href="#开启分类页" class="headerlink" title="开启分类页"></a>开启分类页</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 仅 card theme 支持</span></span><br><span class="line">$ hexo new page categories</span><br><span class="line">  INFO  Created: ~/dev/blog/<span class="built_in">source</span>/categories/index.md</span><br></pre></td></tr></table></figure>
+<p>修改 <code>blog/source/categories/index.md</code> 的元数据</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2017-06-18 18:41:23</span><br><span class="line">layout: categories</span><br><span class="line">comments: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p><a href="https://github.com/yscoder/hexo-theme-indigo/wiki/%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">hexo-theme-indigo</a></p>
+<h2 id="备份-blog-源码"><a href="#备份-blog-源码" class="headerlink" title="备份 blog 源码"></a>备份 blog 源码</h2><p><a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="noopener">hexo-git-backup</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/Users/cmf/Desktop/essay/img/Jietu20180312-221423.jpg" alt="Jietu20180312-221423" title="">
+                </div>
+                <div class="image-caption">Jietu20180312-221423</div>
+            </figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@gitee.com</span><br><span class="line">  Welcome to Gitee.com, CMF!</span><br></pre></td></tr></table></figure>
+<p>安装 hexo-git-backup</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如果 hexo 版本号是 2.x.x</span></span><br><span class="line">$ npm install hexo-git-backup@0.0.91 --save</span><br><span class="line"><span class="comment"># 如果 hexo 版本号是 3.x.x</span></span><br><span class="line">$ npm install hexo-git-backup --save</span><br></pre></td></tr></table></figure>
+<p>配置 blog/_config.yml</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">backup:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  <span class="comment"># 备份主题</span></span><br><span class="line">  <span class="comment">## theme: your theme name,your theme name</span></span><br><span class="line">  <span class="comment">## theme/your theme name/.git 将会被移除</span></span><br><span class="line">  theme: indigo,landscape</span><br><span class="line">  <span class="comment"># 提交信息</span></span><br><span class="line">  message: update</span><br><span class="line">  <span class="comment"># 仓库</span></span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:xxx/xxx.git,branchName</span><br><span class="line">    gitcafe: git@gitcafe.com:xxx/xxx.git,branchName</span><br><span class="line">    gitee: git@gitee.com:xxx/xxx.git,branchName</span><br></pre></td></tr></table></figure>
+<p>使用，如有权限问题，使用 sudo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo backup</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ hexo b</span><br></pre></td></tr></table></figure>
+<h2 id="克隆-blog-源码"><a href="#克隆-blog-源码" class="headerlink" title="克隆 blog 源码"></a>克隆 blog 源码</h2><p>具备 Git、Node、Hexo 等环境后，执行以下命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@gitee.com:xxx/xxx.git blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 无反应？</strong></p>
+<p>一般是端口占用的原因。使用 <code>Ctrl+C</code> 中断本地服务，执行命令 <code>hexo s -p 5000</code> 更改端口号并重新开启本地服务，访问 <a href="http://localhost:5000/" target="_blank" rel="noopener">http://localhost:5000/</a> 即可。</p>
+<p><strong>hexo deploy 没反应？</strong></p>
+<p>修改配置文件：_config.yml 时，冒号后面没加空格。</p>
+<p><strong>hexo backup 出错？</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo backup</span><br><span class="line">  Please make sure you have the correct access rights and the repository exists.</span><br><span class="line">  ERROR: Repository not found.</span><br><span class="line">  fatal: Could not <span class="built_in">read</span> from remote repository.</span><br></pre></td></tr></table></figure>
+<p><code>.git</code> 中已经配置了远程仓库，导致更换仓库地址后出现这个问题，删掉 blog 目录中的 <code>.git</code> 文件夹，重新执行 <code>hexo backup</code> 。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        转载请注明出处：<a href="/posts/2014/blog-base-on-hexo-and-github/" target="_blank" rel="external">https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://mingfengst.github.io">
+            <img src="/img/avatar.jpg" alt="CMF">
+            CMF
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/&title=《Hexo+GitHub 搭建个人博客》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/&title=《Hexo+GitHub 搭建个人博客》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo+GitHub 搭建个人博客》 — CMF | Blog&url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/&via=https://mingfengst.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/2014/naming-rule/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">命名规则</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/2014/usage-node/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node 的用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Just Do IT
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>CMF &copy; 2014 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/&title=《Hexo+GitHub 搭建个人博客》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/&title=《Hexo+GitHub 搭建个人博客》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo+GitHub 搭建个人博客》 — CMF | Blog&url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/&via=https://mingfengst.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2014/blog-base-on-hexo-and-github/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQW7jQAwEQP//095rgE2cbnLGcIDSKYhkWaXDkO7h4xEfzy/H6/8/fzi+nv3/DrPPHjvw8PDwFo/++tY55qfXkX/jT5+q74CHh4d3jZfc7nWRSAD7K/NnxsPDw/s0XnKHttfNr8HDw8P7i7wkntg0yu0rxsPDw3s/bx+/5lFsfrRhMR4eHt57eHn7+zl/X9nfw8PDw1vvqp9qnTf3WRUVPDw8vAu8fMFtW+Q8XGjx9XAYHh4e3gVeHtTmAcFs0GofUkRZNR4eHt6ClyzH+wW93dxqt7iifBoPDw/vEG/2xXkZONV2r4a38PDw8N7CyxfuvOGeFYPiN0GbT+Dh4eEteG173RaG2Qtq449VecDDw8MreW0L244FnGqdhy0+Hh4e3lFevnwfiwZGBWAYOuPh4eFd4LU/+GehQBLjtklCcQc8PDy8o7x8OCC5ftZG39gq+6bu4eHh4R3l/TK0FISwswijDXProoKHh4d3jZfHoy1pdmXLWG194eHh4W3X/8esnZ1FFbNiMNzlw8PDwzvK2ww2zSKJfRiRnMXDw8O7x0sqRt7s5sMH+YZW3voPu3s8PDy8ktfCZttmSdN8KvKIhq7w8PDwFrzZIj5ruw88YllI8PDw8O7x8sD0RgE4O5KFh4eHd5t3dhE/G/XmA1v1nh4eHh7emndqjKA9e3bDDA8PD++dvLOLeNteR3t0QanAw8PDu817lsd+EZ8Fx0kZ+OYsHh4e3gVeu/i2H24HC9ritCkneHh4eBverBjM3lweRrShbbSzh4eHh3eUtxlsalvhs1Xrl3EHPDw8vA/jvW6y8wKTvIiEdLgw4OHh4R3izR46HwKY7WHV+2N4eHh4a17S+G4GCJLWOS8zxegVHh4e3gXebCurLTOze96LMPDw8PBGvH+WwUrf/uMh0AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '等着你回来！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
