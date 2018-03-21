@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-165843.jpg">
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-211146.jpg">
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-221423.jpg">
-<meta property="og:updated_time" content="2018-03-21T09:14:56.054Z">
+<meta property="og:updated_time" content="2018-03-21T09:33:20.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+GitHub 搭建个人博客">
 <meta name="twitter:description" content="前言Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文是一篇基于 GitHub Pages 的 Hexo 博客搭建教程。 准备安装前提安装 Hexo 相当简单。然而在安装前，先检查电脑中是否已安装下列应用程序：  Git Node.js  安装方法：参考文章 Git 的用法、Node 的用法。 检查">
@@ -325,7 +325,8 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo backup</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ hexo b</span><br></pre></td></tr></table></figure>
 <h2 id="克隆-blog-源码"><a href="#克隆-blog-源码" class="headerlink" title="克隆 blog 源码"></a>克隆 blog 源码</h2><p>具备 Git、Node、Hexo 等环境后，执行以下命令。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@gitee.com:xxx/xxx.git blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h2 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h2><p>新建文本文档，复制粘贴以下代码，Mac 系统保存为 <code>.sh</code> 文件，Win 系统保存为 <code>.bat</code> 文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入 blog 所在目录</span></span><br><span class="line"><span class="built_in">cd</span> /Users/cmf/dev/blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span></span><br><span class="line"><span class="comment"># 在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令</span></span><br><span class="line"><span class="comment"># 一般情况不执行</span></span><br><span class="line"><span class="comment"># hexo clean</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件，简写：hexo g</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署网站，简写：hexo d</span></span><br><span class="line">hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份源码，简写：hexo b</span></span><br><span class="line">hexo backup</span><br></pre></td></tr></table></figure>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 无反应？</strong></p>
 <p>一般是端口占用的原因。使用 <code>Ctrl+C</code> 中断本地服务，执行命令 <code>hexo s -p 5000</code> 更改端口号并重新开启本地服务，访问 <a href="http://localhost:5000/" target="_blank" rel="noopener">http://localhost:5000/</a> 即可。</p>
 <p><strong>hexo deploy 没反应？</strong></p>
