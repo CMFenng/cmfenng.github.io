@@ -35,6 +35,29 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <!-- 修改部分：开始 -->
+    <!-- 自定义的代码高亮风格：引入 highlight.js -->
+    
+        <link rel="stylesheet" href="/plugins/highlight/monokai-sublime.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+          Array.prototype.slice.call(document.querySelectorAll('pre code')).forEach(function(block) {
+            hljs.highlightBlock(block);
+          })
+        </script>
+        <style>
+            .post-content pre {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 5px;
+            }
+        </style>
+    
+    <!-- 主题默认的代码高亮风格：修改样式 -->
+    
+    <!-- 修改部分：结束 -->
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->

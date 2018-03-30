@@ -35,6 +35,29 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <!-- 修改部分：开始 -->
+    <!-- 自定义的代码高亮风格：引入 highlight.js -->
+    
+        <link rel="stylesheet" href="/plugins/highlight/monokai-sublime.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+          Array.prototype.slice.call(document.querySelectorAll('pre code')).forEach(function(block) {
+            hljs.highlightBlock(block);
+          })
+        </script>
+        <style>
+            .post-content pre {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 5px;
+            }
+        </style>
+    
+    <!-- 主题默认的代码高亮风格：修改样式 -->
+    
+    <!-- 修改部分：结束 -->
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -207,8 +230,24 @@
 
     
         前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。
-页面命名页面结构# 外围wrapper# 主体main# 内容content | container# 页头header# 页脚 | 页尾footer# 中middle | center# 上top# 下bottom# 左left# 右right
-页面分区...
+页面命名页面结构# 外围
+wrapper
+# 主体
+main
+# 内容
+content | container
+# 页头
+header
+# 页脚 | 页尾
+footer
+# 中
+middle | center
+# 上
+top
+# 下
+bottom
+# 左
+...
     
 
         <a href="/posts/2014/naming-rule/" class="post-more waves-effect waves-button">
@@ -372,9 +411,10 @@ Node.js
 安装过程建议保持默认设置，一路 next！
 检查是否安装成功，能获取到对应版本号，则说明安装成功。
 $ git --version
+
 注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。
 
-注意：Gi...
+注意：G...
     
 
         <a href="/posts/2014/usage-git/" class="post-more waves-effect waves-button">

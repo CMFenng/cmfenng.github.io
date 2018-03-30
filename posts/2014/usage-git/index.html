@@ -20,25 +20,48 @@
     
     
     <meta name="keywords" content="git,开发环境">
-    <meta name="description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version 注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitHu">
+    <meta name="description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version  注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitH">
 <meta name="keywords" content="git,开发环境">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 的用法">
 <meta property="og:url" content="https://mingfengst.github.io/posts/2014/usage-git/index.html">
 <meta property="og:site_name" content="CMF | Blog">
-<meta property="og:description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version 注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitHu">
+<meta property="og:description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version  注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitH">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180301-230037.jpg">
 <meta property="og:updated_time" content="2018-03-21T09:32:29.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 的用法">
-<meta name="twitter:description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version 注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitHu">
+<meta name="twitter:description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version  注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitH">
 <meta name="twitter:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180301-230037.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <!-- 修改部分：开始 -->
+    <!-- 自定义的代码高亮风格：引入 highlight.js -->
+    
+        <link rel="stylesheet" href="/plugins/highlight/monokai-sublime.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+          Array.prototype.slice.call(document.querySelectorAll('pre code')).forEach(function(block) {
+            hljs.highlightBlock(block);
+          })
+        </script>
+        <style>
+            .post-content pre {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 5px;
+            }
+        </style>
+    
+    <!-- 主题默认的代码高亮风格：修改样式 -->
+    
+    <!-- 修改部分：结束 -->
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -221,15 +244,41 @@
 </blockquote>
 <p>安装过程建议保持默认设置，一路 next！</p>
 <p>检查是否安装成功，能获取到对应版本号，则说明安装成功。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">$ git --version
+</code></pre>
 <h2 id="注册-GitHub"><a href="#注册-GitHub" class="headerlink" title="注册 GitHub"></a>注册 GitHub</h2><p>进入 <a href="https://github.com/" target="_blank" rel="noopener">GitHub 官网</a>，已经有 GitHub 账号的可以直接 <a href="https://github.com/login" target="_blank" rel="noopener">登录</a>，还没有的需要 <a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">注册</a>，根据提示输入用户名、Email、密码即可完成注册。</p>
 <blockquote>
 <p>注意：GitHub 账号用户名一旦注册成功就不能修改。比如我的用户名是 mingfengst</p>
 </blockquote>
 <h2 id="Git-配置"><a href="#Git-配置" class="headerlink" title="Git 配置"></a>Git 配置</h2><h3 id="配置-SSH"><a href="#配置-SSH" class="headerlink" title="配置 SSH"></a>配置 SSH</h3><p>在终端设置 user.name 和 user.email</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"your github user.name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"your github user.email"</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash">$ git config --global user.name &quot;your github user.name&quot;
+$ git config --global user.email &quot;your github user.email&quot;
+</code></pre>
 <p>生成 ssh 密钥</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"your github user.email"</span></span><br><span class="line">  <span class="comment"># 设置保存的路径，密码（可直接回车跳过）</span></span><br><span class="line">  Generating public/private rsa key pair.</span><br><span class="line">  Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/cmf/.ssh/id_rsa):</span><br><span class="line">  Created directory <span class="string">'/Users/cmf/.ssh'</span>.</span><br><span class="line">  Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">  Enter same passphrase again:</span><br><span class="line">  Your identification has been saved <span class="keyword">in</span> /Users/cmf/.ssh/id_rsa.</span><br><span class="line">  Your public key has been saved <span class="keyword">in</span> /Users/cmf/.ssh/id_rsa.pub.</span><br><span class="line">  The key fingerprint is:</span><br><span class="line">  SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX your github user.email</span><br><span class="line">  The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">  +---[RSA 2048]----+</span></span><br><span class="line"><span class="string">  |  .. ..        .X|</span></span><br><span class="line"><span class="string">  | o  ..   .      .|</span></span><br><span class="line"><span class="string">  |  o   . = o . .o |</span></span><br><span class="line"><span class="string">  |   .   X X + +  o|</span></span><br><span class="line"><span class="string">  |  .   . X O . o .|</span></span><br><span class="line"><span class="string">  | . . . . X o . + |</span></span><br><span class="line"><span class="string">  |  + + o o . . o  |</span></span><br><span class="line"><span class="string">  |  o*.=.  .       |</span></span><br><span class="line"><span class="string">  | ..=*...         |</span></span><br><span class="line"><span class="string">  +----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash">$ ssh-keygen -t rsa -C &quot;your github user.email&quot;
+  # 设置保存的路径，密码（可直接回车跳过）
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/Users/cmf/.ssh/id_rsa):
+  Created directory &#39;/Users/cmf/.ssh&#39;.
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  Your identification has been saved in /Users/cmf/.ssh/id_rsa.
+  Your public key has been saved in /Users/cmf/.ssh/id_rsa.pub.
+  The key fingerprint is:
+  SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX your github user.email
+  The key&#39;s randomart image is:
+  +---[RSA 2048]----+
+  |  .. ..        .X|
+  | o  ..   .      .|
+  |  o   . = o . .o |
+  |   .   X X + +  o|
+  |  .   . X O . o .|
+  | . . . . X o . + |
+  |  + + o o . . o  |
+  |  o*.=.  .       |
+  | ..=*...         |
+  +----[SHA256]-----+
+</code></pre>
 <blockquote>
 <p>此时，在用户文件夹下就会有一个新的文件夹.ssh，里面有刚刚创建的 ssh 密钥文件 id_rsa 和 id_rsa.pub。</p>
 </blockquote>
@@ -241,7 +290,31 @@
                 </div>
                 <div class="image-caption">Jietu20180301-230037</div>
             </figure>
-<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看 git 的版本号</span></span><br><span class="line">$ git --version</span><br><span class="line"><span class="comment"># 查看 git 的安装路径（Mac）</span></span><br><span class="line">$ <span class="built_in">which</span> git</span><br><span class="line"><span class="comment"># 查看 git 的安装路径（Win）</span></span><br><span class="line">$ <span class="built_in">where</span> git</span><br><span class="line"><span class="comment"># 克隆仓库，默认与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为第二个参数</span></span><br><span class="line">$ git <span class="built_in">clone</span> &lt;版本库地址&gt; &lt;本地目录名&gt;</span><br><span class="line"><span class="comment"># 查看分支，* 为当前分支</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 新建分支</span></span><br><span class="line">$ git branch &lt;分支名&gt;</span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">$ git checkout &lt;分支名&gt;</span><br><span class="line"><span class="comment"># 新建并切换到新分支</span></span><br><span class="line">$ git checkout -b &lt;分支名&gt;</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git add .</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git commit -m <span class="string">'提交备注'</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git push origin &lt;分支名&gt;</span><br><span class="line"><span class="comment"># </span></span><br><span class="line">$ git update-ref -d HEAD</span><br></pre></td></tr></table></figure>
+<h2 id="Git-常用命令"><a href="#Git-常用命令" class="headerlink" title="Git 常用命令"></a>Git 常用命令</h2><pre><code class="bash"># 查看 git 的版本号
+$ git --version
+# 查看 git 的安装路径（Mac）
+$ which git
+# 查看 git 的安装路径（Win）
+$ where git
+# 克隆仓库，默认与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为第二个参数
+$ git clone &lt;版本库地址&gt; &lt;本地目录名&gt;
+# 查看分支，* 为当前分支
+$ git branch
+# 新建分支
+$ git branch &lt;分支名&gt;
+# 切换分支
+$ git checkout &lt;分支名&gt;
+# 新建并切换到新分支
+$ git checkout -b &lt;分支名&gt;
+# 
+$ git add .
+# 
+$ git commit -m &#39;提交备注&#39;
+# 
+$ git push origin &lt;分支名&gt;
+# 
+$ git update-ref -d HEAD
+</code></pre>
 
         </div>
 

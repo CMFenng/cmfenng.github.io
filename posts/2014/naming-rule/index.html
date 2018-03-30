@@ -20,23 +20,46 @@
     
     
     <meta name="keywords" content="规范">
-    <meta name="description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围wrapper# 主体main# 内容content | container# 页头header# 页脚 | 页尾footer# 中middle | center# 上top# 下bottom# 左left# 右right 页面分区# 菜">
+    <meta name="description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
 <meta name="keywords" content="规范">
 <meta property="og:type" content="article">
 <meta property="og:title" content="命名规则">
 <meta property="og:url" content="https://mingfengst.github.io/posts/2014/naming-rule/index.html">
 <meta property="og:site_name" content="CMF | Blog">
-<meta property="og:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围wrapper# 主体main# 内容content | container# 页头header# 页脚 | 页尾footer# 中middle | center# 上top# 下bottom# 左left# 右right 页面分区# 菜">
+<meta property="og:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-03-20T07:33:21.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命名规则">
-<meta name="twitter:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围wrapper# 主体main# 内容content | container# 页头header# 页脚 | 页尾footer# 中middle | center# 上top# 下bottom# 左left# 右right 页面分区# 菜">
+<meta name="twitter:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
     
         <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <!-- 修改部分：开始 -->
+    <!-- 自定义的代码高亮风格：引入 highlight.js -->
+    
+        <link rel="stylesheet" href="/plugins/highlight/monokai-sublime.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+          Array.prototype.slice.call(document.querySelectorAll('pre code')).forEach(function(block) {
+            hljs.highlightBlock(block);
+          })
+        </script>
+        <style>
+            .post-content pre {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 5px;
+            }
+        </style>
+    
+    <!-- 主题默认的代码高亮风格：修改样式 -->
+    
+    <!-- 修改部分：结束 -->
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -214,34 +237,166 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。</p>
-<h2 id="页面命名"><a href="#页面命名" class="headerlink" title="页面命名"></a>页面命名</h2><h3 id="页面结构"><a href="#页面结构" class="headerlink" title="页面结构"></a>页面结构</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 外围</span></span><br><span class="line">wrapper</span><br><span class="line"><span class="comment"># 主体</span></span><br><span class="line">main</span><br><span class="line"><span class="comment"># 内容</span></span><br><span class="line">content | container</span><br><span class="line"><span class="comment"># 页头</span></span><br><span class="line">header</span><br><span class="line"><span class="comment"># 页脚 | 页尾</span></span><br><span class="line">footer</span><br><span class="line"><span class="comment"># 中</span></span><br><span class="line">middle | center</span><br><span class="line"><span class="comment"># 上</span></span><br><span class="line">top</span><br><span class="line"><span class="comment"># 下</span></span><br><span class="line">bottom</span><br><span class="line"><span class="comment"># 左</span></span><br><span class="line">left</span><br><span class="line"><span class="comment"># 右</span></span><br><span class="line">right</span><br></pre></td></tr></table></figure>
-<h3 id="页面分区"><a href="#页面分区" class="headerlink" title="页面分区"></a>页面分区</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 菜单</span></span><br><span class="line">menu</span><br><span class="line"><span class="comment"># 子菜单</span></span><br><span class="line">submenu</span><br><span class="line"><span class="comment"># 标题</span></span><br><span class="line">title</span><br><span class="line"><span class="comment"># 标志</span></span><br><span class="line">logo</span><br><span class="line"><span class="comment"># 图标</span></span><br><span class="line">icon</span><br><span class="line"><span class="comment"># 导航</span></span><br><span class="line">nav</span><br><span class="line"><span class="comment"># 主导航</span></span><br><span class="line">mainbav</span><br><span class="line"><span class="comment"># 子导航</span></span><br><span class="line">subnav</span><br><span class="line"><span class="comment"># 顶导航</span></span><br><span class="line">topnav</span><br><span class="line"><span class="comment"># 边导航 | 侧栏</span></span><br><span class="line">sidebar</span><br><span class="line"><span class="comment"># 栏目 | 纵栏</span></span><br><span class="line">column</span><br><span class="line"><span class="comment"># 左导航</span></span><br><span class="line">leftsidebar</span><br><span class="line"><span class="comment"># 右导航</span></span><br><span class="line">rightsidebar</span><br><span class="line"><span class="comment"># 标签页</span></span><br><span class="line">tab</span><br><span class="line"><span class="comment"># 登录条</span></span><br><span class="line">loginbar</span><br><span class="line"><span class="comment"># 购物车</span></span><br><span class="line">shop</span><br><span class="line"><span class="comment"># 广告</span></span><br><span class="line">banner</span><br><span class="line"><span class="comment"># 热点</span></span><br><span class="line">hot</span><br><span class="line"><span class="comment"># 新闻</span></span><br><span class="line">news</span><br><span class="line"><span class="comment"># 摘要</span></span><br><span class="line">summary</span><br><span class="line"><span class="comment"># 文章列表</span></span><br><span class="line">list</span><br><span class="line"><span class="comment"># 状态</span></span><br><span class="line">status</span><br><span class="line"><span class="comment"># 提示信息</span></span><br><span class="line">msg</span><br><span class="line"><span class="comment"># 小技巧</span></span><br><span class="line">tips</span><br><span class="line"><span class="comment"># 指南</span></span><br><span class="line">guide</span><br><span class="line"><span class="comment"># 服务</span></span><br><span class="line">service</span><br><span class="line"><span class="comment"># 加入</span></span><br><span class="line">joinus</span><br><span class="line"><span class="comment"># 版权</span></span><br><span class="line">copyright</span><br><span class="line"><span class="comment"># 友情链接</span></span><br><span class="line">friendlink | link</span><br><span class="line"><span class="comment"># 合作伙伴</span></span><br><span class="line">partner</span><br></pre></td></tr></table></figure>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 登录</span></span><br><span class="line">login | <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 注册</span></span><br><span class="line">regsiter | reg</span><br><span class="line"><span class="comment"># 下载</span></span><br><span class="line">download</span><br><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">search</span><br><span class="line"><span class="comment"># 滚动</span></span><br><span class="line">scroll</span><br><span class="line"><span class="comment"># 投票</span></span><br><span class="line">vote</span><br><span class="line"><span class="comment"># 当前的</span></span><br><span class="line">current</span><br><span class="line"><span class="comment"># 注释</span></span><br><span class="line">note</span><br></pre></td></tr></table></figure>
-<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按钮</span></span><br><span class="line">btn</span><br><span class="line"><span class="comment"># 输入框</span></span><br><span class="line">ipt</span><br></pre></td></tr></table></figure>
+<h2 id="页面命名"><a href="#页面命名" class="headerlink" title="页面命名"></a>页面命名</h2><h3 id="页面结构"><a href="#页面结构" class="headerlink" title="页面结构"></a>页面结构</h3><pre><code class="bash"># 外围
+wrapper
+# 主体
+main
+# 内容
+content | container
+# 页头
+header
+# 页脚 | 页尾
+footer
+# 中
+middle | center
+# 上
+top
+# 下
+bottom
+# 左
+left
+# 右
+right
+</code></pre>
+<h3 id="页面分区"><a href="#页面分区" class="headerlink" title="页面分区"></a>页面分区</h3><pre><code class="bash"># 菜单
+menu
+# 子菜单
+submenu
+# 标题
+title
+# 标志
+logo
+# 图标
+icon
+# 导航
+nav
+# 主导航
+mainbav
+# 子导航
+subnav
+# 顶导航
+topnav
+# 边导航 | 侧栏
+sidebar
+# 栏目 | 纵栏
+column
+# 左导航
+leftsidebar
+# 右导航
+rightsidebar
+# 标签页
+tab
+# 登录条
+loginbar
+# 购物车
+shop
+# 广告
+banner
+# 热点
+hot
+# 新闻
+news
+# 摘要
+summary
+# 文章列表
+list
+# 状态
+status
+# 提示信息
+msg
+# 小技巧
+tips
+# 指南
+guide
+# 服务
+service
+# 加入
+joinus
+# 版权
+copyright
+# 友情链接
+friendlink | link
+# 合作伙伴
+partner
+</code></pre>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><pre><code class="bash"># 登录
+login | log
+# 注册
+regsiter | reg
+# 下载
+download
+# 搜索
+search
+# 滚动
+scroll
+# 投票
+vote
+# 当前的
+current
+# 注释
+note
+</code></pre>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><pre><code class="bash"># 按钮
+btn
+# 输入框
+ipt
+</code></pre>
 <h2 id="样式命名"><a href="#样式命名" class="headerlink" title="样式命名"></a>样式命名</h2><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><blockquote>
 <p>使用颜色的名称或者 16 进制代码</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.red</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br><span class="line"><span class="selector-class">.f60</span> &#123; <span class="attribute">color</span>: <span class="number">#f60</span>; &#125;</span><br><span class="line"><span class="selector-class">.ff8600</span> &#123; <span class="attribute">color</span>: <span class="number">#ff8600</span>; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.red { color: red; }
+.f60 { color: #f60; }
+.ff8600 { color: #ff8600; }
+</code></pre>
 <h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><blockquote>
 <p>直接使用 “font + 字体大小”</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.font12px</span> &#123; <span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;</span><br><span class="line"><span class="selector-class">.font9pt</span> &#123; <span class="attribute">font-size</span>: <span class="number">9pt</span>; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.font12px { font-size: 12px; }
+.font9pt { font-size: 9pt; }
+</code></pre>
 <h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><blockquote>
 <p>使用对齐目标的英文名称</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.left</span> &#123; <span class="attribute">float</span>: left; &#125;</span><br><span class="line"><span class="selector-class">.bottom</span> &#123; <span class="attribute">float</span>: bottom; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.left { float: left; }
+.bottom { float: bottom; }
+</code></pre>
 <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
 <p>使用 “类别+功能” 的方式</p>
 </blockquote>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.barnews</span> &#123; &#125;</span><br><span class="line"><span class="selector-class">.barproduct</span> &#123; &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="css">.barnews { }
+.barproduct { }
+</code></pre>
 <h2 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h2><ol>
 <li>一律小写</li>
 <li>尽量用英文</li>
 <li>不加中杆和下划线</li>
 <li>尽量不缩写，除非一看就明白的单词</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 主要的</span></span><br><span class="line">master.css</span><br><span class="line"><span class="comment"># 模块</span></span><br><span class="line">module.css</span><br><span class="line"><span class="comment"># 基本共用</span></span><br><span class="line">base.css</span><br><span class="line"><span class="comment"># 主题</span></span><br><span class="line">themes.css</span><br><span class="line"><span class="comment"># 专栏</span></span><br><span class="line">columns.css</span><br><span class="line"><span class="comment"># 打印</span></span><br><span class="line">print.css</span><br><span class="line"><span class="comment"># 文字</span></span><br><span class="line">font.css</span><br><span class="line"><span class="comment"># 表单</span></span><br><span class="line">forms.css</span><br><span class="line"><span class="comment"># 补丁</span></span><br><span class="line">mend.css</span><br><span class="line"><span class="comment"># 布局 | 版面</span></span><br><span class="line">layout.css</span><br></pre></td></tr></table></figure>
-<h2 id="注释写法"><a href="#注释写法" class="headerlink" title="注释写法"></a>注释写法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Footer */</span></span><br><span class="line">内容区</span><br><span class="line"><span class="comment">/* End Footer */</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># 主要的
+master.css
+# 模块
+module.css
+# 基本共用
+base.css
+# 主题
+themes.css
+# 专栏
+columns.css
+# 打印
+print.css
+# 文字
+font.css
+# 表单
+forms.css
+# 补丁
+mend.css
+# 布局 | 版面
+layout.css
+</code></pre>
+<h2 id="注释写法"><a href="#注释写法" class="headerlink" title="注释写法"></a>注释写法</h2><pre><code class="css">/* Footer */
+内容区
+/* End Footer */
+</code></pre>
 
         </div>
 
