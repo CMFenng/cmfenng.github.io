@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-165843.jpg">
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-211146.jpg">
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180312-221423.jpg">
-<meta property="og:updated_time" content="2018-03-31T13:14:53.753Z">
+<meta property="og:updated_time" content="2018-04-01T15:06:12.871Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+GitHub 搭建个人博客">
 <meta name="twitter:description" content="前言Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文是一篇基于 GitHub Pages 的 Hexo 博客搭建教程。 准备环境准备安装 Hexo 相当简单。然而在安装前，先检查电脑中是否已安装下列应用程序：  Git Node.js  安装方法：参考文章 Git 的用法、Node 的用法。 检查">
@@ -509,10 +509,11 @@ hljs:
 </code></pre>
 <p>引入 highlight.js 的 css 和 js 文件，具体引入位置如下：</p>
 <p>打开 <code>xxx</code> 文件，找到第一行代码，修改如下：</p>
-<pre><code class="html">&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;涵月天-microzz.com | IT技术分享&lt;/title&gt;
+<pre><code class="html">&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;涵月天-microzz.com | IT技术分享&lt;/title&gt;
     &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?v=1.4.5&quot;&gt; --&gt;
     &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;css.css&quot; media=&quot;none&quot; onload=&quot;if(media!=&#39;all&#39;)media=&#39;all&#39;&quot;&gt; --&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://icdn.microzz.com/microzz/css/style.css?v=2&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://icdn.microzz.com/microzz/css/atom-one-dark.1.css&quot;&gt;&lt;script&gt;window.lazyScripts=[]&lt;/script&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://icdn.microzz.com/microzz/css/style.css?v=2&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://icdn.microzz.com/microzz/css/atom-one-dark.1.css&quot;&gt;&lt;script&gt;window.lazyScripts=[]&lt;/script&gt;
 &lt;/head&gt;
 </code></pre>
 <p>打开 <code>xxx</code> 文件，找的第一行代码，修改如下：</p>
@@ -601,18 +602,18 @@ hello world
 </code></pre>
 <p>/Users/cmf/dev/blog/themes/indigo/layout/_partial/head.ejs</p>
 <pre><code class="css">&lt;style&gt;
-    .post-content .highlight {
-        padding: 0.8em;
-        margin-left: 0;
-        margin-right: 0;
-        border-radius: 5px;
+  .post-content .highlight {
+    padding: 0.8em;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 5px;
     }
     .post-content .highlight pre {
-        background: transparent;
+    background: transparent;
     }
     /* 滚动条轨道 */
     ::-webkit-scrollbar-track {
-        border-radius: 5px;
+    border-radius: 5px;
     }
 &lt;/style&gt;
 </code></pre>
