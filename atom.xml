@@ -89,9 +89,9 @@
       <category term="工具" scheme="https://mingfengst.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="开发环境" scheme="https://mingfengst.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    
       <category term="node" scheme="https://mingfengst.github.io/tags/node/"/>
+    
+      <category term="开发环境" scheme="https://mingfengst.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
@@ -116,9 +116,9 @@
       <category term="工具" scheme="https://mingfengst.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="git" scheme="https://mingfengst.github.io/tags/git/"/>
-    
       <category term="开发环境" scheme="https://mingfengst.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    
+      <category term="git" scheme="https://mingfengst.github.io/tags/git/"/>
     
   </entry>
   
