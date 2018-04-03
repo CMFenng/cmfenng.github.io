@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="CMF | Blog">
 <meta property="og:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-20T07:33:21.019Z">
+<meta property="og:updated_time" content="2018-04-03T09:06:41.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命名规则">
 <meta name="twitter:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
@@ -341,36 +341,28 @@ btn
 # 输入框
 ipt
 </code></pre>
-<h2 id="样式命名"><a href="#样式命名" class="headerlink" title="样式命名"></a>样式命名</h2><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><blockquote>
-<p>使用颜色的名称或者 16 进制代码</p>
-</blockquote>
+<h2 id="样式命名"><a href="#样式命名" class="headerlink" title="样式命名"></a>样式命名</h2><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>使用颜色的名称或者 16 进制代码。</p>
 <pre><code class="css">.red { color: red; }
 .f60 { color: #f60; }
 .ff8600 { color: #ff8600; }
 </code></pre>
-<h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><blockquote>
-<p>直接使用 “font + 字体大小”</p>
-</blockquote>
+<h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><p>直接使用 “font + 字体大小”。</p>
 <pre><code class="css">.font12px { font-size: 12px; }
 .font9pt { font-size: 9pt; }
 </code></pre>
-<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><blockquote>
-<p>使用对齐目标的英文名称</p>
-</blockquote>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>使用对齐目标的英文名称。</p>
 <pre><code class="css">.left { float: left; }
 .bottom { float: bottom; }
 </code></pre>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
-<p>使用 “类别+功能” 的方式</p>
-</blockquote>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>使用 “类别+功能” 的方式。</p>
 <pre><code class="css">.barnews { }
 .barproduct { }
 </code></pre>
 <h2 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h2><ol>
-<li>一律小写</li>
-<li>尽量用英文</li>
-<li>不加中杆和下划线</li>
-<li>尽量不缩写，除非一看就明白的单词</li>
+<li>一律小写。</li>
+<li>尽量用英文。</li>
+<li>不加中杆和下划线。</li>
+<li>尽量不缩写，除非一看就明白的单词。</li>
 </ol>
 <pre><code class="bash"># 主要的
 master.css
@@ -482,7 +474,14 @@ layout.css
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/posts/2014/blog-code-highlight/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">修改博客代码高亮风格</h4>
+      </a>
+    </div>
   
 
   
