@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="CMF | Blog">
 <meta property="og:description" content="刚用 Hexo+GitHub 搭建个人博客并更换 indigo 主题后，由于个人对里面代码块的语法高亮风格并不喜欢，就自己尝试着更换风格。这里以我使用的 indigo 主题 为例，总结出以下几种方式。 直接修改配色方案如果只是不喜欢代码块的语法高亮配色方案，那么直接修改项目中的 highlight.less 文件即可。可以参考这里的 配色方案。 修改 blog/themes/indigo/sour">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-03T19:27:45.541Z">
+<meta property="og:updated_time" content="2018-04-04T18:47:25.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修改博客代码块的语法高亮风格">
 <meta name="twitter:description" content="刚用 Hexo+GitHub 搭建个人博客并更换 indigo 主题后，由于个人对里面代码块的语法高亮风格并不喜欢，就自己尝试着更换风格。这里以我使用的 indigo 主题 为例，总结出以下几种方式。 直接修改配色方案如果只是不喜欢代码块的语法高亮配色方案，那么直接修改项目中的 highlight.less 文件即可。可以参考这里的 配色方案。 修改 blog/themes/indigo/sour">
@@ -210,7 +210,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接修改配色方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">直接修改配色方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引入-highlight-js"><span class="post-toc-number">2.</span> <span class="post-toc-text">引入 highlight.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#示例"><span class="post-toc-number">3.</span> <span class="post-toc-text">示例</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接修改配色方案"><span class="post-toc-number">1.</span> <span class="post-toc-text">直接修改配色方案</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引入-highlight-js"><span class="post-toc-number">2.</span> <span class="post-toc-text">引入 highlight.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考</span></a></li></ol>
         </nav>
     </aside>
 
@@ -288,12 +288,7 @@ highlight:
 skip_render:
   - &#39;plugins/**&#39;
 </code></pre>
-<p>通过对项目的修改，<code>highlight.enable</code> 的值与之前表示的有所不同：</p>
-<ul>
-<li><code>true</code>：使用主题默认的高亮风格</li>
-<li><code>false</code>：使用 highlight.js 自定义的高亮风格</li>
-</ul>
-<p>修改 <code>blog/_config.yml</code> 的配置，将 <code>highlight.enable</code> 的值设置为 <code>false</code>。</p>
+<p>修改 <code>blog/_config.yml</code> 的配置，将 <code>highlight.enable</code> 的值设置为 <code>false</code>，并配置引入文件的路径。</p>
 <pre><code class="yaml"># 代码块的设置
 highlight:
   enable: false
@@ -328,43 +323,15 @@ highlight:
 &lt;% } %&gt;
 </code></pre>
 <p>修改过程中保留了原来的样式表，样式表的优先级对引入 highlight.js 后的语法高亮效果和样式产生了影响，因此可以在 <code>monokai-sublime.css</code> 中将被影响的属性加上 <code>!important</code>，让其优先级最高。要是不确定哪个属性被影响了，可以给全部属性加上 <code>!important</code>。</p>
-<p>经过上述修改，我们可以通过修改 <code>highlight.enable</code> 的值，快速地切换主题默认的代码语法高亮风格（ <code>true</code> ）和自定义的代码语法高亮风格（ <code>false</code> ）。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><pre><code class="html">&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;涵月天-microzz.com | IT技术分享&lt;/title&gt;
-    &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css?v=1.4.5&quot;&gt; --&gt;
-    &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;css.css&quot; media=&quot;none&quot; onload=&quot;if(media!=&#39;all&#39;)media=&#39;all&#39;&quot;&gt; --&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://icdn.microzz.com/microzz/css/style.css?v=2&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://icdn.microzz.com/microzz/css/atom-one-dark.1.css&quot;&gt;&lt;script&gt;window.lazyScripts=[]&lt;/script&gt;
-&lt;/head&gt;
-</code></pre>
-<pre><code class="javascript">function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-             ` class=&quot;${cls}&quot;`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i &lt; classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log(&#39;undefined&#39;);
-  }
-}
-
-export  $initHighlight;
-</code></pre>
-<pre><code class="json">[
-  {
-    &quot;title&quot;: &quot;apples&quot;,
-    &quot;count&quot;: [12000, 20000],
-    &quot;description&quot;: {&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false}
-  },
-  {
-    &quot;title&quot;: &quot;oranges&quot;,
-    &quot;count&quot;: [17500, null],
-    &quot;description&quot;: {&quot;text&quot;: &quot;...&quot;, &quot;sensitive&quot;: false}
-  }
-]
-</code></pre>
+<p>通过对项目的修改，<code>highlight.enable</code> 的值与之前表示的有所不同：</p>
+<ul>
+<li><code>true</code>：使用主题默认的高亮风格</li>
+<li><code>false</code>：使用 highlight.js 自定义的高亮风格</li>
+</ul>
+<p>因此，我们可以通过修改 <code>highlight.enable</code> 的值，快速地切换主题默认的代码语法高亮风格和自定义的代码语法高亮风格。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.ieclipse.cn/2016/07/18/Web/Hexo-dev-highlight/" target="_blank" rel="noopener">Hexo高级教程之代码高亮</a></li>
+</ul>
 
         </div>
 
