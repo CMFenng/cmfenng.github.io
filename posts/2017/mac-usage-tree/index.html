@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Mac 使用 tree 生成目录结构 | CMF | Blog | Just Do IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Mac">
+    <meta name="description" content="写文章时，经常需要将一个目录的结构列出来。或许可以直接截图贴上来，但有时图片并不能体现出完整的结构。下面，将使用 tree 来实现这种效果。 . ├── README.md ├── _config.yml ├── package-lock.json ├── package.json ├── scaffolds │   ├── draft.md │   ├── page.md │   └── pos">
+<meta name="keywords" content="Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 使用 tree 生成目录结构">
+<meta property="og:url" content="https://mingfengst.github.io/posts/2017/mac-usage-tree/index.html">
+<meta property="og:site_name" content="CMF | Blog">
+<meta property="og:description" content="写文章时，经常需要将一个目录的结构列出来。或许可以直接截图贴上来，但有时图片并不能体现出完整的结构。下面，将使用 tree 来实现这种效果。 . ├── README.md ├── _config.yml ├── package-lock.json ├── package.json ├── scaffolds │   ├── draft.md │   ├── page.md │   └── pos">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-08T09:44:34.804Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac 使用 tree 生成目录结构">
+<meta name="twitter:description" content="写文章时，经常需要将一个目录的结构列出来。或许可以直接截图贴上来，但有时图片并不能体现出完整的结构。下面，将使用 tree 来实现这种效果。 . ├── README.md ├── _config.yml ├── package-lock.json ├── package.json ├── scaffolds │   ├── draft.md │   ├── page.md │   └── pos">
+    
+        <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <!-- 修改部分：开始 -->
+    <!-- 自定义的代码语法高亮风格：引入 highlight.js -->
+    
+        <link rel="stylesheet" href="/plugins/highlight/monokai-sublime.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            Array.prototype.slice.call(document.querySelectorAll('pre code')).forEach(function(block) {
+                hljs.highlightBlock(block);
+            })
+        </script>
+        <style>
+            .post-content pre {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 5px;
+            }
+        </style>
+    
+    <!-- 主题默认的代码语法高亮风格：修改样式 -->
+    
+    <!-- 修改部分：结束 -->
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CMF</h5>
+          <a href="mailto:mingfengst@163.com" title="mingfengst@163.com" class="mail">mingfengst@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                Gitee
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://cn.vuejs.org" target="_blank" >
+                <i class="icon icon-lg icon-vimeo"></i>
+                Vue
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://reactjs.org" target="_blank" >
+                <i class="icon icon-lg icon-registered"></i>
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                Custom
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Mac 使用 tree 生成目录结构</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Mac 使用 tree 生成目录结构</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-13T08:21:32.000Z" itemprop="datePublished" class="page-time">
+  2017-11-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#tree-安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">tree 安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#tree-常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">tree 常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解读-tree-–help"><span class="post-toc-number">3.</span> <span class="post-toc-text">解读 tree –help</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-mac-usage-tree"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Mac 使用 tree 生成目录结构</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-13 16:21:32" datetime="2017-11-13T08:21:32.000Z"  itemprop="datePublished">2017-11-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>写文章时，经常需要将一个目录的结构列出来。或许可以直接截图贴上来，但有时图片并不能体现出完整的结构。下面，将使用 tree 来实现这种效果。</p>
+<pre><code class="txt">.
+├── README.md
+├── _config.yml
+├── package-lock.json
+├── package.json
+├── scaffolds
+│   ├── draft.md
+│   ├── page.md
+│   └── post.md
+├── source
+│   ├── 404.html
+│   ├── CNAME
+│   ├── _posts
+│   ├── categories
+│   ├── plugins
+│   └── tags
+└── themes
+    ├── indigo
+    └── landscape
+</code></pre>
+<h2 id="tree-安装"><a href="#tree-安装" class="headerlink" title="tree 安装"></a>tree 安装</h2><p>macOS 下直接使用 Homebrew 安装。</p>
+<pre><code class="bash">$ brew install tree
+</code></pre>
+<h2 id="tree-常用命令"><a href="#tree-常用命令" class="headerlink" title="tree 常用命令"></a>tree 常用命令</h2><p>显示当前目录下的所有文件。</p>
+<pre><code class="bash">$ tree
+</code></pre>
+<p>显示 dirname 目录下的所有文件，以及权限。</p>
+<pre><code class="bash">$ tree -p &lt;dirname&gt;
+</code></pre>
+<p>显示 dirname 目录下的所有文件，以及大小。</p>
+<pre><code class="bash">$ tree -h &lt;dirname&gt;
+</code></pre>
+<p>显示 path 路径下的所有符合正则表达式的文件。</p>
+<pre><code class="bash">$ tree &lt;path&gt; -P &quot;&lt;pattern&gt;&quot;
+# eg
+$ tree blog/img -P &quot;*.jpg&quot;
+</code></pre>
+<p>查看某个文件夹下的所有文件。</p>
+<pre><code class="bash">$ tree -a
+</code></pre>
+<p>只显示文件夹</p>
+<pre><code class="bash">$ tree -d
+</code></pre>
+<p>显示目录的层级。n 表示层级数。</p>
+<pre><code class="bash">$ tree -L n
+</code></pre>
+<p>过滤不想要显示的文件或者文件夹。比如你想要过滤项目中的node_modules文件夹，可以使用tree -I “node_modules”</p>
+<pre><code class="bash">$ tree -I pattern
+</code></pre>
+<p>将项目结构输出到 tree.md 这个文件。</p>
+<pre><code class="bash">$ tree &gt; tree.md
+</code></pre>
+<p>如果我们要显示某个项目下3层的所有文件结构，同时又过滤node_modules文件夹，最后输出到tree.md，可以这么写</p>
+<pre><code class="bash">$ tree -L 3 -I &quot;node_modules&quot;
+</code></pre>
+<p>默认情况下，tree命令无法显示中文文件或文件夹名，会是一串转义字符。这时可以用选项-N来显示中文文件名：</p>
+<pre><code class="bash">$ tree -N folder
+</code></pre>
+<pre><code class="bash"># 显示所有文件和目录
+-a
+# 使用 ASNI 绘图字符显示树状图而非以 ASCII 字符组合
+-A
+# 在文件和目录清单上加色彩，便于区分各种类型
+-C
+# 显示目录名称而非内容
+-d
+# 列出文件或目录的更改时间
+-D
+# 在每个文件或目录之前，显示完整的相对路径名称
+-f
+# 在执行文件，目录，Socket，符号连接，管道名称，各自加上&quot;*&quot;,&quot;/&quot;,&quot;=&quot;,&quot;@&quot;,&quot;|&quot;号
+-F
+# 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码
+-g
+# 不以阶梯状列出文件或目录名称
+-i
+# 不显示符合范本样式的文件或目录名称
+-I &lt;范本样式&gt;
+# 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录
+-l
+# 不在文件和目录清单上加色彩
+-n
+# 直接列出文件和目录名称，包括控制字符
+-N
+# 列出权限标示
+-p
+# 只显示符合范本样式的文件或目录名称
+-P &lt;范本样式&gt;
+# 用&quot;?&quot;号取代控制字符，列出文件和目录名称
+-q
+# 列出文件或目录大小
+-s
+# 用文件和目录的更改时间排序，从最新开始排序
+-t
+# 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码
+-u
+# 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外
+-x
+</code></pre>
+<h2 id="解读-tree-–help"><a href="#解读-tree-–help" class="headerlink" title="解读 tree –help"></a>解读 tree –help</h2><pre><code class="bash">$ tree --help
+usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]
+    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]
+    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]
+    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]
+    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]
+  ------- Listing options -------
+  -a            All files are listed.
+  -d            List directories only.
+  -l            Follow symbolic links like directories.
+  -f            Print the full path prefix for each file.
+  -x            Stay on current filesystem only.
+  -L level      Descend only level directories deep.
+  -R            Rerun tree when max dir level reached.
+  -P pattern    List only those files that match the pattern given.
+  -I pattern    Do not list files that match the given pattern.
+  --ignore-case Ignore case when pattern matching.
+  --matchdirs   Include directory names in -P pattern matching.
+  --noreport    Turn off file/directory count at end of tree listing.
+  --charset X   Use charset X for terminal/HTML and indentation line output.
+  --filelimit # Do not descend dirs with more than # files in them.
+  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.
+  -o filename   Output to file instead of stdout.
+  -------- File options ---------
+  -q            Print non-printable characters as &#39;?&#39;.
+  -N            Print non-printable characters as is.
+  -Q            Quote filenames with double quotes.
+  -p            Print the protections for each file.
+  -u            Displays file owner or UID number.
+  -g            Displays file group owner or GID number.
+  -s            Print the size in bytes of each file.
+  -h            Print the size in a more human readable way.
+  --si          Like -h, but use in SI units (powers of 1000).
+  -D            Print the date of last modification or (-c) status change.
+  -F            Appends &#39;/&#39;, &#39;=&#39;, &#39;*&#39;, &#39;@&#39;, &#39;|&#39; or &#39;&gt;&#39; as per ls -F.
+  --inodes      Print inode number of each file.
+  --device      Print device ID number to which each file belongs.
+  ------- Sorting options -------
+  -v            Sort files alphanumerically by version.
+  -t            Sort files by last modification time.
+  -c            Sort files by last status change time.
+  -U            Leave files unsorted.
+  -r            Reverse the order of the sort.
+  --dirsfirst   List directories before files (-U disables).
+  --sort X      Select sort: name,version,size,mtime,ctime.
+  ------- Graphics options ------
+  -i            Don&#39;t print indentation lines.
+  -A            Print ANSI lines graphic indentation lines.
+  -S            Print with CP437 (console) graphics indentation lines.
+  -n            Turn colorization off always (-C overrides).
+  -C            Turn colorization on always.
+  ------- XML/HTML/JSON options -------
+  -X            Prints out an XML representation of the tree.
+  -J            Prints out an JSON representation of the tree.
+  -H baseHREF   Prints out HTML format with baseHREF as top directory.
+  -T string     Replace the default HTML title and H1 header with string.
+  --nolinks     Turn off hyperlinks in HTML output.
+  ---- Miscellaneous options ----
+  --version     Print version and exit.
+  --help        Print usage and this help message and exit.
+  --            Options processing terminator.
+</code></pre>
+<pre><code class="bash">$ tree --help
+usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]
+    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]
+    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]
+    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]
+    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]
+
+    # 列表选项
+  ------- Listing options -------
+  # 列出所有文件
+  -a            All files are listed.
+  # 仅列出目录
+  -d            List directories only.
+
+  -l            Follow symbolic links like directories.
+  -f            Print the full path prefix for each file.
+  -x            Stay on current filesystem only.
+  -L level      Descend only level directories deep.
+  -R            Rerun tree when max dir level reached.
+  -P pattern    List only those files that match the pattern given.
+  -I pattern    Do not list files that match the given pattern.
+  --ignore-case Ignore case when pattern matching.
+  --matchdirs   Include directory names in -P pattern matching.
+  --noreport    Turn off file/directory count at end of tree listing.
+  --charset X   Use charset X for terminal/HTML and indentation line output.
+  --filelimit # Do not descend dirs with more than # files in them.
+  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.
+  -o filename   Output to file instead of stdout.
+  -------- File options ---------
+  -q            Print non-printable characters as &#39;?&#39;.
+  -N            Print non-printable characters as is.
+  -Q            Quote filenames with double quotes.
+  -p            Print the protections for each file.
+  -u            Displays file owner or UID number.
+  -g            Displays file group owner or GID number.
+  -s            Print the size in bytes of each file.
+  -h            Print the size in a more human readable way.
+  --si          Like -h, but use in SI units (powers of 1000).
+  -D            Print the date of last modification or (-c) status change.
+  -F            Appends &#39;/&#39;, &#39;=&#39;, &#39;*&#39;, &#39;@&#39;, &#39;|&#39; or &#39;&gt;&#39; as per ls -F.
+  --inodes      Print inode number of each file.
+  --device      Print device ID number to which each file belongs.
+  ------- Sorting options -------
+  -v            Sort files alphanumerically by version.
+  -t            Sort files by last modification time.
+  -c            Sort files by last status change time.
+  -U            Leave files unsorted.
+  -r            Reverse the order of the sort.
+  --dirsfirst   List directories before files (-U disables).
+  --sort X      Select sort: name,version,size,mtime,ctime.
+  ------- Graphics options ------
+  -i            Don&#39;t print indentation lines.
+  -A            Print ANSI lines graphic indentation lines.
+  -S            Print with CP437 (console) graphics indentation lines.
+  -n            Turn colorization off always (-C overrides).
+  -C            Turn colorization on always.
+  ------- XML/HTML/JSON options -------
+  -X            Prints out an XML representation of the tree.
+  -J            Prints out an JSON representation of the tree.
+  -H baseHREF   Prints out HTML format with baseHREF as top directory.
+  -T string     Replace the default HTML title and H1 header with string.
+  --nolinks     Turn off hyperlinks in HTML output.
+  ---- Miscellaneous options ----
+  --version     Print version and exit.
+  --help        Print usage and this help message and exit.
+  --            Options processing terminator.
+</code></pre>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://www.jb51.net/article/100123.htm" target="_blank" rel="noopener">Liunx系统命令中tree命令详解</a></li>
+<li><a href="http://www.jb51.net/article/85917.htm" target="_blank" rel="noopener">一天一个shell命令 linux文本操作系列-tree命令详解</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        转载请注明出处：<a href="/posts/2017/mac-usage-tree/" target="_blank" rel="external">https://mingfengst.github.io/posts/2017/mac-usage-tree/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://mingfengst.github.io">
+            <img src="/img/avatar.jpg" alt="CMF">
+            CMF
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2017/mac-usage-tree/&title=《Mac 使用 tree 生成目录结构》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2017/mac-usage-tree/&title=《Mac 使用 tree 生成目录结构》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2017/mac-usage-tree/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac 使用 tree 生成目录结构》 — CMF | Blog&url=https://mingfengst.github.io/posts/2017/mac-usage-tree/&via=https://mingfengst.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2017/mac-usage-tree/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/2017/mac-usage-homebrew/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Homebrew 的用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Just Do IT
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>CMF &copy; 2014 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2017/mac-usage-tree/&title=《Mac 使用 tree 生成目录结构》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2017/mac-usage-tree/&title=《Mac 使用 tree 生成目录结构》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2017/mac-usage-tree/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac 使用 tree 生成目录结构》 — CMF | Blog&url=https://mingfengst.github.io/posts/2017/mac-usage-tree/&via=https://mingfengst.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2017/mac-usage-tree/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3awXLCMAxFUf7/p+mWDtPkPskwtXyzYiBNfLx4tSw/Hvh6vl2v35PPr9+8P5ncueCSIUPGtozn5cWH8tc917/yKbh5jgwZMg5g8EeToCRDuZ4OPjYZMmTIqC0BOYwvPWXIkCFjbeCS52/wf0OGDBn/jMHj8vobfvHtvMW1uAwZMjZk8Cj8/ueP9DdkyJCxFaMWkWkgfiKsf71FhgwZoxk84PgGGb+/U/TKkCHjHAY5VEGGS6KTLzrJW4I5liFDxiBG/+AXfwtveaIlpgwZMkYzak1EPmjS4CTxjVa4MmTIGMrgZWQ/HNPGAAl3GTJknMBIN/rTgjONZjKJQZdVhgwZIxhpUcoLXT5N5G9vYlqGDBmjGZ1WQXpeq1YSFwtjGTJkDGKg41Zh1KYHyDjv5kCYDBkyRjM6G2SdYS0+bCFDhowDGATGg7V25KLY4JQhQ8YxjH5jMljM4YGiS4YMGQcweMmaRjApfTtjQ/0NGTJkbM5Ih9hawJVCn98jQ4aM2Yw0HNNDEmnbIH27DBkyTmYUj2SBFkJtbx+1B2TIkHEAo9PgrB28SDfaUODKkCFjEOMZXry45XHMA/qm/pYhQ8ZQRq1LyJd9KT4oWWswGTJkbMtIt8Z4cNeOU6StCBkyZJzDCKre0lZ+Z5rQRMiQIUNGo/XY2cgLqDJkyJDRCN9OEAd3ypAh4wBGrRmwqlWZRrMMGTJOY6zay0q38tODZekTZMiQMYLxA8lwk2HVhnLbAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '等着你回来！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
