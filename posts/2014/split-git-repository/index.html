@@ -13,25 +13,25 @@
     
     
     
-    <title>命名规则 | CMF | Blog | Just Do IT</title>
+    <title>拆分 git 仓库 | CMF | Blog | Just Do IT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="规范">
-    <meta name="description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
-<meta name="keywords" content="规范">
+    <meta name="keywords" content="Git">
+    <meta name="description" content="现有一个名为 Case 的 git 仓库，里面包含了多个项目或者模块的文件夹，现在要把每个文件夹独立出来作为一个 git 仓库，并且保留之前各自提交的 commit 记录。 要拆分的 git 仓库目录树： . ├── .git ├── other ├── vue-musicPlayer └── weapp-QQmusicPlayer  以拆分 vue-musicPlayer 文件夹为例： 第一步：">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="命名规则">
-<meta property="og:url" content="https://mingfengst.github.io/posts/2014/naming-rule/index.html">
+<meta property="og:title" content="拆分 git 仓库">
+<meta property="og:url" content="https://mingfengst.github.io/posts/2014/split-git-repository/index.html">
 <meta property="og:site_name" content="CMF | Blog">
-<meta property="og:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
+<meta property="og:description" content="现有一个名为 Case 的 git 仓库，里面包含了多个项目或者模块的文件夹，现在要把每个文件夹独立出来作为一个 git 仓库，并且保留之前各自提交的 commit 记录。 要拆分的 git 仓库目录树： . ├── .git ├── other ├── vue-musicPlayer └── weapp-QQmusicPlayer  以拆分 vue-musicPlayer 文件夹为例： 第一步：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-05T13:50:10.566Z">
+<meta property="og:updated_time" content="2018-04-19T10:05:05.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="命名规则">
-<meta name="twitter:description" content="前言规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。 页面命名页面结构# 外围 wrapper # 主体 main # 内容 content | container # 页头 header # 页脚 | 页尾 footer # 中 middle | center # 上 top # 下 bottom # 左 lef">
+<meta name="twitter:title" content="拆分 git 仓库">
+<meta name="twitter:description" content="现有一个名为 Case 的 git 仓库，里面包含了多个项目或者模块的文件夹，现在要把每个文件夹独立出来作为一个 git 仓库，并且保留之前各自提交的 commit 记录。 要拆分的 git 仓库目录树： . ├── .git ├── other ├── vue-musicPlayer └── weapp-QQmusicPlayer  以拆分 vue-musicPlayer 文件夹为例： 第一步：">
     
         <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
     
@@ -163,7 +163,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">命名规则</div>
+        <div class="flex-col header-title ellipsis">拆分 git 仓库</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -185,15 +185,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">命名规则</h1>
+        <h1 class="title">拆分 git 仓库</h1>
         <h5 class="subtitle">
             
-                <time datetime="2014-07-01T05:24:58.000Z" itemprop="datePublished" class="page-time">
-  2014-07-01
+                <time datetime="2014-06-21T13:10:38.000Z" itemprop="datePublished" class="page-time">
+  2014-06-21
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Web/">Web</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
 
             
         </h5>
@@ -207,24 +207,17 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面命名"><span class="post-toc-number">2.</span> <span class="post-toc-text">页面命名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#页面结构"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">页面结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#页面分区"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">页面分区</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#功能"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#样式命名"><span class="post-toc-number">3.</span> <span class="post-toc-text">样式命名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#颜色"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">颜色</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字号"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">字号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对齐"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">对齐</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标题"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">标题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件命名"><span class="post-toc-number">4.</span> <span class="post-toc-text">文件命名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注释写法"><span class="post-toc-number">5.</span> <span class="post-toc-text">注释写法</span></a></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-naming-rule"
+<article id="post-split-git-repository"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">命名规则</h1>
+        <h1 class="post-card-title">拆分 git 仓库</h1>
         <div class="post-meta">
-            <time class="post-time" title="2014-07-01 13:24:58" datetime="2014-07-01T05:24:58.000Z"  itemprop="datePublished">2014-07-01</time>
+            <time class="post-time" title="2014-06-21 21:10:38" datetime="2014-06-21T13:10:38.000Z"  itemprop="datePublished">2014-06-21</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Web/">Web</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
 
 
 
@@ -236,158 +229,32 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>规范的命名在程序开发中有明显的优势，它即能让自己日后维护简单，也能让团队友好的合作，在网页开发中，特别是团队合作，命名是非常重要的。</p>
-<h2 id="页面命名"><a href="#页面命名" class="headerlink" title="页面命名"></a>页面命名</h2><h3 id="页面结构"><a href="#页面结构" class="headerlink" title="页面结构"></a>页面结构</h3><pre><code class="bash"># 外围
-wrapper
-# 主体
-main
-# 内容
-content | container
-# 页头
-header
-# 页脚 | 页尾
-footer
-# 中
-middle | center
-# 上
-top
-# 下
-bottom
-# 左
-left
-# 右
-right
+            <p>现有一个名为 Case 的 git 仓库，里面包含了多个项目或者模块的文件夹，现在要把每个文件夹独立出来作为一个 git 仓库，并且保留之前各自提交的 commit 记录。</p>
+<p>要拆分的 git 仓库目录树：</p>
+<pre><code class="txt">.
+├── .git
+├── other
+├── vue-musicPlayer
+└── weapp-QQmusicPlayer
 </code></pre>
-<h3 id="页面分区"><a href="#页面分区" class="headerlink" title="页面分区"></a>页面分区</h3><pre><code class="bash"># 菜单
-menu
-# 子菜单
-submenu
-# 标题
-title
-# 标志
-logo
-# 图标
-icon
-# 导航
-nav
-# 主导航
-mainbav
-# 子导航
-subnav
-# 顶导航
-topnav
-# 边导航 | 侧栏
-sidebar
-# 栏目 | 纵栏
-column
-# 左导航
-leftsidebar
-# 右导航
-rightsidebar
-# 标签页
-tab
-# 登录条
-loginbar
-# 购物车
-shop
-# 广告
-banner
-# 热点
-hot
-# 新闻
-news
-# 摘要
-summary
-# 文章列表
-list
-# 状态
-status
-# 提示信息
-msg
-# 小技巧
-tips
-# 指南
-guide
-# 服务
-service
-# 加入
-joinus
-# 版权
-copyright
-# 友情链接
-friendlink | link
-# 合作伙伴
-partner
+<p>以拆分 vue-musicPlayer 文件夹为例：</p>
+<p>第一步：进入 Case 目录，将 Case 仓库中关于 vue-musicPlayer 的提交信息抽取出来作为新的分支。</p>
+<pre><code class="bash">[Case] $ git subtree split -P &lt;folder_name&gt; -b &lt;branch_name&gt;
+# eg: git subtree split -P vue-musicPlayer -b vue-musicPlayer
+# Created branch &#39;vue-musicPlayer&#39;
 </code></pre>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><pre><code class="bash"># 登录
-login | log
-# 注册
-regsiter | reg
-# 下载
-download
-# 搜索
-search
-# 滚动
-scroll
-# 投票
-vote
-# 当前的
-current
-# 注释
-note
-</code></pre>
-<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><pre><code class="bash"># 按钮
-btn
-# 输入框
-ipt
-</code></pre>
-<h2 id="样式命名"><a href="#样式命名" class="headerlink" title="样式命名"></a>样式命名</h2><h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>使用颜色的名称或者 16 进制代码。</p>
-<pre><code class="css">.red { color: red; }
-.f60 { color: #f60; }
-.ff8600 { color: #ff8600; }
-</code></pre>
-<h3 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h3><p>直接使用 “font + 字体大小”。</p>
-<pre><code class="css">.font12px { font-size: 12px; }
-.font9pt { font-size: 9pt; }
-</code></pre>
-<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>使用对齐目标的英文名称。</p>
-<pre><code class="css">.left { float: left; }
-.bottom { float: bottom; }
-</code></pre>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>使用 “类别+功能” 的方式。</p>
-<pre><code class="css">.barnews { }
-.barproduct { }
-</code></pre>
-<h2 id="文件命名"><a href="#文件命名" class="headerlink" title="文件命名"></a>文件命名</h2><ol>
-<li>一律小写。</li>
-<li>尽量用英文。</li>
-<li>不加中杆和下划线。</li>
-<li>尽量不缩写，除非一看就明白的单词。</li>
-</ol>
-<pre><code class="bash"># 主要的
-master.css
-# 模块
-module.css
-# 基本共用
-base.css
-# 主题
-themes.css
-# 专栏
-columns.css
-# 打印
-print.css
-# 文字
-font.css
-# 表单
-forms.css
-# 补丁
-mend.css
-# 布局 | 版面
-layout.css
-</code></pre>
-<h2 id="注释写法"><a href="#注释写法" class="headerlink" title="注释写法"></a>注释写法</h2><pre><code class="css">/* Footer */
-内容区
-/* End Footer */
+<p>第二步：新建 vue-musicPlayer 仓库，并从 Case 仓库中拉取 vue-musicPlayer 分支的内容，即可成为独立的仓库。</p>
+<pre><code class="bash">[Case] $ cd ..
+[~] $ mkdir vue-musicPlayer
+[~] $ cd vue-musicPlayer
+[vue-musicPlayer] $ git init
+[vue-musicPlayer] $ git pull ../Case vue-musicPlayer
+# remote: Counting objects: 30, done.
+# remote: Compressing objects: 100% (26/26), done.
+# remote: Total 30 (delta 0), reused 27 (delta 0)
+# Unpacking objects: 100% (30/30), done.
+# From ../Case
+#  * branch            vue-musicPlayer -&gt; FETCH_HEAD
 </code></pre>
 
         </div>
@@ -398,7 +265,7 @@ layout.css
         
 
         
-        转载请注明出处：<a href="/posts/2014/naming-rule/" target="_blank" rel="external">https://mingfengst.github.io/posts/2014/naming-rule/</a>
+        转载请注明出处：<a href="/posts/2014/split-git-repository/" target="_blank" rel="external">https://mingfengst.github.io/posts/2014/split-git-repository/</a>
         
     </div>
     
@@ -419,7 +286,7 @@ layout.css
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
 
             
@@ -429,7 +296,7 @@ layout.css
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2014/naming-rule/&title=《命名规则》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2014/split-git-repository/&title=《拆分 git 仓库》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -439,22 +306,22 @@ layout.css
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2014/naming-rule/&title=《命名规则》 — CMF | Blog&source=CMF" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2014/split-git-repository/&title=《拆分 git 仓库》 — CMF | Blog&source=CMF" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2014/naming-rule/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2014/split-git-repository/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《命名规则》 — CMF | Blog&url=https://mingfengst.github.io/posts/2014/naming-rule/&via=https://mingfengst.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拆分 git 仓库》 — CMF | Blog&url=https://mingfengst.github.io/posts/2014/split-git-repository/&via=https://mingfengst.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2014/naming-rule/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2014/split-git-repository/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -477,18 +344,18 @@ layout.css
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/posts/2017/mac-usage-homebrew/" id="post-prev" class="post-nav-link">
+      <a href="/posts/2014/naming-rule/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Homebrew 的用法</h4>
+        <h4 class="title">命名规则</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/posts/2014/split-git-repository/" id="post-next" class="post-nav-link">
+      <a href="/posts/2014/blog-code-highlight/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">拆分 git 仓库</h4>
+        <h4 class="title">修改博客代码块的语法高亮风格</h4>
       </a>
     </div>
   
@@ -582,7 +449,7 @@ layout.css
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2014/naming-rule/&title=《命名规则》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2014/split-git-repository/&title=《拆分 git 仓库》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -592,22 +459,22 @@ layout.css
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2014/naming-rule/&title=《命名规则》 — CMF | Blog&source=CMF" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2014/split-git-repository/&title=《拆分 git 仓库》 — CMF | Blog&source=CMF" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2014/naming-rule/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2014/split-git-repository/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《命名规则》 — CMF | Blog&url=https://mingfengst.github.io/posts/2014/naming-rule/&via=https://mingfengst.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《拆分 git 仓库》 — CMF | Blog&url=https://mingfengst.github.io/posts/2014/split-git-repository/&via=https://mingfengst.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2014/naming-rule/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2014/split-git-repository/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -618,7 +485,7 @@ layout.css
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNklEQVR42u3aQZKDMAxEUe5/aWbL1ATT3TKpsfxZpQgYHguVZOk45OO8HH/PXM9f/1XO3K15vHHAgAFjWcY5PMbX3L2i/iGU3+Onw4ABYx/G3YPHSyv/uhjlA8GAAQNGPQgqL+cGXxgwYMDQGeNr6gAYMGDAqBSx4+RPOa+kjK/X4jBgwFiQoe+6f//3K/0NGDBgLMU4zUO/y21Juuv/WhkGDBitGVkDUhmkcFsLymoPaSgMGDCaMvSStdIqGL+WXh7b3xgGDBgtGPbmuzA2MX6JWW3OD2dgwIDRlKFv5SupYZYIKs81UkMYMGA0ZShLuK3NSktSL5hhwICxA6PSvJy79Z+NcUzowcKAAePfMyob925amT1RWgEGDBitGdk2/dwH2yVrFoJhwICxOMMtIJXCUi9f9Y7kw70wYMBozXDnyJSWpzIwkTVBS7U4DBgwlmW4YVRvFbilrzv39SE1hAEDRjtGZajLbSq8cb1RecOAAaMFY1be5Qbr7Im3Y2EwYMBox9BfPds4c7fGsiQVBgwYOzAq5Wj2OdwQLDVEYcCAsTEjG5vIQnO22QcDBox9GFlLMmPrwd14KxgwYDRlnOahkPTrlfAqUWHAgNGa4XYJ3YGJLFl0k1EYMGDswJgVZN0Amq08YVcPBgwYyzLcInZW+7NSxMKAAQNGtnFWb3mGW3IwYMCAETUy3ZRxfNfDlTBgwNiAoY9tueG1MmpmBHoYMGC0ZmQjDjrbLYwrrQIYMGC0Y/wAhZYi4LgG/ekAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aQZKjQAwEQP//097rHAaoEp6NsMg+OQzYnRwUklqvV7zeP9bR1aNv8mfP7/zAwsDA+FrG+3Qd3XMESDaa35PsDQMD4zmM9qfPw3GyrfbqxZ4xMDAwRgExx7cBHQMDA6Pdep3GxUUsBgYGxizwHW0u+f58W7deDQYGxmpG3nX//5//5HwDAwPjqxjvcuXB8U6qV+8KAwNjNaM9hpy10pJfSIrqizQUAwNjKWNWOh5tOi9Z8wAdwTAwMFYzzsNl25KrI31JutgnBgbGUkZ7SJkfOiZhtE1AL1JDDAyMpYw8s5q13mZlcPsSMTAwdjPaIrNt4ufp5myMI6pxMTAwVjDaBn3+1J0AnZSyvxwMYGBgrGO0f3Y/ZZwdJEShGQMDYylj1uhvC9e2lZaXwa/ZT2NgYHwVIw+OSWDNE8T2zmLYAgMDYykjv7We47gRrGdzXxgYGM9hRO2tcthrttF6YWBgrGO0bbK8WZ8fYc4OUA/bbRgYGOsYs+GJO8g80NclMQYGxgMYeQI3K2uLsYlR2oqBgfEExqygbQN0PoJWp5sYGBiPYbR/02Jm6WNU+mJgYCxlvMuV49tWWj4UG52LYmBgLGJ8tljNA2s79jp7WRgYGJsYbWKXzzncGbmo238YGBgPYLTt+Lysza9+rBbHwMDAGLXS2k3XT2FgYGDER4zt4EXe2ru4EwMD4wGM2cDE/SOENrk8TE8xMDBWM2alYz22VZJmRwUYGBjrGP8AG09Bz1lbAg0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
