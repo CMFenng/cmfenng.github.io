@@ -29,7 +29,7 @@
 <meta property="og:description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version  注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitH">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://mingfengst.github.io/Users/cmf/Desktop/essay/img/Jietu20180301-230037.jpg">
-<meta property="og:updated_time" content="2018-04-24T08:19:02.559Z">
+<meta property="og:updated_time" content="2018-04-25T09:17:52.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 的用法">
 <meta name="twitter:description" content="Git 安装到 Git 官网 获取安装包。  注意：从官方链接下载安装包可能需要翻墙！  安装过程建议保持默认设置，一路 next！ 检查是否安装成功，能获取到对应版本号，则说明安装成功。 $ git --version  注册 GitHub进入 GitHub 官网，已经有 GitHub 账号的可以直接 登录，还没有的需要 注册，根据提示输入用户名、Email、密码即可完成注册。  注意：GitH">
@@ -305,6 +305,8 @@ $ which git
 $ where git
 # 克隆仓库，默认与远程主机的版本库同名。如果要指定不同的目录名，可以将目录名作为第二个参数
 $ git clone &lt;版本库地址&gt; &lt;本地目录名&gt;
+# 查看远程库地址
+$ git remote -v
 # 查看分支，* 为当前分支
 $ git branch
 # 新建分支
@@ -325,7 +327,7 @@ $ git reset --hard &lt;commit_id&gt;
 # 回退到上 n 个版本
 $ git reset HEAD~n
 $ git reset --hard HEAD~n
-# 使用上述方法进行回退后，推送的时候需要添加参数 --force
+# 使用 reset 方法进行回退后，推送的时候需要添加参数 --force
 $ git push --force
 # 版本回退，不会擦除“回退”之后的 commit_id，而是正常的当做一次 commit，产生一次新的操作记录，所以可以 push，不会让你再 pull
 $ git revert &lt;commit_id&gt;
@@ -342,7 +344,16 @@ $ git push origin &lt;分支名&gt;
 # 
 $ git update-ref -d HEAD
 </code></pre>
-<h2 id="删除-git-版本库中的-commit"><a href="#删除-git-版本库中的-commit" class="headerlink" title="删除 git 版本库中的 commit"></a>删除 git 版本库中的 commit</h2><p>假设一开始 git 仓库本地和远程都是 <code>a -&gt; b -&gt; c</code>，想把 HEAD 回退到 b，那么在本地就变成了 <code>a -&gt; b</code>，这时，如果没有远程库，那么接下来怎么操作都可以，比如 <code>a -&gt; b -&gt; d</code>，但是在有远程库的情况下，<code>git push</code> 会失败，因为远程库是 <code>a -&gt; b -&gt; c</code>，本地库是 <code>a -&gt; b -&gt; d</code>，以下是两种解决方案：</p>
+<h2 id="删除-git-版本库中的-commit"><a href="#删除-git-版本库中的-commit" class="headerlink" title="删除 git 版本库中的 commit"></a>删除 git 版本库中的 commit</h2><pre><code class="bash"># 方案 1
+$ git reset &lt;commit_id&gt;           # 回退到指定版本，保留当前源码的更改
+$ git reset --hard &lt;commit_id&gt;    # 回退到指定版本，放弃当前源码的更改
+$ git reset HEAD~n                # 回退到上 n 个版本
+$ git reset --hard HEAD~n
+$ git push --force                # 使用 reset 方法进行回退后，推送的时候需要添加参数 --force
+# 方案 2
+$ git revert &lt;commit_id&gt;
+</code></pre>
+<p>假设一开始 git 仓库本地和远程都是 <code>a -&gt; b -&gt; c</code>，想把 HEAD 回退到 b，那么在本地就变成了 <code>a -&gt; b</code>，这时，如果没有远程库，那么接下来怎么操作都可以，比如 <code>a -&gt; b -&gt; d</code>，但是在有远程库的情况下，<code>git push</code> 会失败，因为远程库是 <code>a -&gt; b -&gt; c</code>，本地库是 <code>a -&gt; b -&gt; d</code>，以下是两种解决方案：</p>
 <ol>
 <li><code>git push</code> 的时候用 <code>--force</code> 参数，强制把远程库变成 <code>a -&gt; b -&gt; d</code>，但是在大部分公司里是不允许这么做的。</li>
 <li>使用 <code>git revert &lt;commit_id&gt;</code> 做一个反向操作，实现以退为进，把本地变成 <code>a -&gt; b -&gt; c -&gt; d</code>，注意 b 和 d 文件快照内容一模一样，但是 commit_id 肯定不同，再 push 到远程也会变成 <code>a -&gt; b -&gt; c -&gt; d</code>。</li>
