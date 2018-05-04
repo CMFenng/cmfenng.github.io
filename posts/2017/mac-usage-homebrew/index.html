@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="CMF | Blog">
 <meta property="og:description" content="Homebrew 是 macOS 系统中最受欢迎的包管理工具，以最简单、最灵活的方式来安装苹果公司在 macOS 中不包含的 UNIX 工具。 Homebrew 官网Homebrew 文档 Homebrew 安装主要分 3 步：  安装 Xcode（Xcode Command Line Tools），直接到 App Store 免费下载安装。  安装 homebrew，在终端执行命令： $ /us">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-03T15:50:35.820Z">
+<meta property="og:updated_time" content="2018-05-04T07:41:20.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Homebrew 的用法">
 <meta name="twitter:description" content="Homebrew 是 macOS 系统中最受欢迎的包管理工具，以最简单、最灵活的方式来安装苹果公司在 macOS 中不包含的 UNIX 工具。 Homebrew 官网Homebrew 文档 Homebrew 安装主要分 3 步：  安装 Xcode（Xcode Command Line Tools），直接到 App Store 免费下载安装。  安装 homebrew，在终端执行命令： $ /us">
@@ -268,14 +268,21 @@
 </code></pre>
 <h2 id="Homebrew-常用命令"><a href="#Homebrew-常用命令" class="headerlink" title="Homebrew 常用命令"></a>Homebrew 常用命令</h2><pre><code class="bash"># 更新 Homebrew
 $ brew update
-# 安装软件
+# 安装非可视化软件
 $ brew install &lt;formula&gt;
+# 安装可视化软件
 $ brew cask install &lt;formula&gt;
 # 卸载软件
 $ brew uninstall &lt;formula&gt;
 $ brew cask uninstall &lt;formula&gt;
-# 更新软件
+# 升级指定软件
 $ brew upgrade &lt;formula&gt;
+# 升级所有可以升级的软件
+$ brew upgrade
+# 阻止更新指定软件
+$ brew pin &lt;formula&gt;
+# 再次允许更新置顶软件
+$ brew unpin &lt;formula&gt;
 # 查看软件的信息
 $ brew cask info &lt;formula&gt;
 # 查看所有匹配的软件
@@ -286,6 +293,15 @@ $ brew cask search
 # 查看已安装的软件列表
 $ brew list
 $ brew cask list
+# 查看已安装的过时软件
+$ brew outdated
+# 清理不需要的版本及其安装包缓存
+$ brew cleanup
+# 查看并清理
+$ brew cleanup -n
+$ brew cask cleanup
+# 查看安装包的存放位置，一般是 ~/Library/Caches/Homebrew
+$ brew --cache
 </code></pre>
 <h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><pre><code class="bash">brew cask install alfred
 brew cask install the-unarchiver
@@ -308,6 +324,8 @@ brew cask install virtualbox
 </code></pre>
 <p>brew cask list</p>
 <pre><code class="bash">webstorm
+brew cask install iterm2
+brew cask install mplayerx
 </code></pre>
 
         </div>
