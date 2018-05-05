@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="CMF | Blog">
 <meta property="og:description" content="Homebrew 是 macOS 系统中最受欢迎的包管理工具，以最简单、最灵活的方式来安装苹果公司在 macOS 中不包含的 UNIX 工具。 Homebrew 官网Homebrew 文档 Homebrew 安装主要分 3 步：  安装 Xcode（Xcode Command Line Tools），直接到 App Store 免费下载安装。  安装 homebrew，在终端执行命令： $ /us">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T07:41:20.167Z">
+<meta property="og:updated_time" content="2018-05-05T14:46:13.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Homebrew 的用法">
 <meta name="twitter:description" content="Homebrew 是 macOS 系统中最受欢迎的包管理工具，以最简单、最灵活的方式来安装苹果公司在 macOS 中不包含的 UNIX 工具。 Homebrew 官网Homebrew 文档 Homebrew 安装主要分 3 步：  安装 Xcode（Xcode Command Line Tools），直接到 App Store 免费下载安装。  安装 homebrew，在终端执行命令： $ /us">
@@ -217,7 +217,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Homebrew-安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">Homebrew 安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Homebrew-卸载"><span class="post-toc-number">2.</span> <span class="post-toc-text">Homebrew 卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Homebrew-常用命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">Homebrew 常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#推荐"><span class="post-toc-number">4.</span> <span class="post-toc-text">推荐</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#已安装"><span class="post-toc-number">5.</span> <span class="post-toc-text">已安装</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Homebrew-安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">Homebrew 安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Homebrew-卸载"><span class="post-toc-number">2.</span> <span class="post-toc-text">Homebrew 卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Homebrew-常用命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">Homebrew 常用命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#推荐"><span class="post-toc-number">4.</span> <span class="post-toc-text">推荐</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#已安装"><span class="post-toc-number">5.</span> <span class="post-toc-text">已安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Q-amp-A"><span class="post-toc-number">6.</span> <span class="post-toc-text">Q&amp;A</span></a></li></ol>
         </nav>
     </aside>
 
@@ -302,6 +302,8 @@ $ brew cleanup -n
 $ brew cask cleanup
 # 查看安装包的存放位置，一般是 ~/Library/Caches/Homebrew
 $ brew --cache
+# 重装软件
+$ brew cask reinstall &lt;formula&gt;
 </code></pre>
 <h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><pre><code class="bash">brew cask install alfred
 brew cask install the-unarchiver
@@ -326,6 +328,17 @@ brew cask install virtualbox
 <pre><code class="bash">webstorm
 brew cask install iterm2
 brew cask install mplayerx
+</code></pre>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>有些软件下载失败？</strong></p>
+<pre><code class="bash">$ brew cask install iterm2
+==&gt; Satisfying dependencies
+==&gt; Downloading https://iterm2.com/downloads/stable/iTerm2-3_1_6.zip
+
+curl: (7) Failed to connect to iterm2.com port 443: Operation timed out
+Error: Download failed on Cask &#39;iterm2&#39; with message: Download failed: https://iterm2.com/downloads/stable/iTerm2-3_1_6.zip
+</code></pre>
+<p>解决</p>
+<pre><code class="bash">$ export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 </code></pre>
 
         </div>
