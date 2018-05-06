@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="CMF | Blog">
 <meta property="og:description" content="Homebrew 是 macOS 系统中最受欢迎的包管理工具，以最简单、最灵活的方式来安装苹果公司在 macOS 中不包含的 UNIX 工具。 Homebrew 官网Homebrew 文档 Homebrew 安装主要分 3 步：  安装 Xcode（Xcode Command Line Tools），直接到 App Store 免费下载安装。  安装 homebrew，在终端执行命令： $ /us">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-05T14:46:13.565Z">
+<meta property="og:updated_time" content="2018-05-06T15:01:45.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Homebrew 的用法">
 <meta name="twitter:description" content="Homebrew 是 macOS 系统中最受欢迎的包管理工具，以最简单、最灵活的方式来安装苹果公司在 macOS 中不包含的 UNIX 工具。 Homebrew 官网Homebrew 文档 Homebrew 安装主要分 3 步：  安装 Xcode（Xcode Command Line Tools），直接到 App Store 免费下载安装。  安装 homebrew，在终端执行命令： $ /us">
@@ -337,7 +337,7 @@ brew cask install mplayerx
 curl: (7) Failed to connect to iterm2.com port 443: Operation timed out
 Error: Download failed on Cask &#39;iterm2&#39; with message: Download failed: https://iterm2.com/downloads/stable/iTerm2-3_1_6.zip
 </code></pre>
-<p>解决</p>
+<p>原因是终端没有走代理。解决：开启代理后，打开终端：</p>
 <pre><code class="bash">$ export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 </code></pre>
 
