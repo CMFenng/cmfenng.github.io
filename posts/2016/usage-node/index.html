@@ -13,24 +13,27 @@
     
     
     
-    <title>Hello World | CMF | Blog | Just Do IT</title>
+    <title>Node 的基本用法 | CMF | Blog | Just Do IT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="keywords" content="Node">
+    <meta name="description" content="Node 的安装Node 的安装方式很简单，只要到 Node 的官网 下载好安装包然后双击安装即可。 安装的过程建议保持默认设置，一路 next！但出于操作方便考虑，可以将 PATH 选项按照下图选择：                                                                                              Jietu">
+<meta name="keywords" content="Node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://mingfengst.github.io/posts/2016/hello-world/index.html">
+<meta property="og:title" content="Node 的基本用法">
+<meta property="og:url" content="https://mingfengst.github.io/posts/2016/usage-node/index.html">
 <meta property="og:site_name" content="CMF | Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Node 的安装Node 的安装方式很简单，只要到 Node 的官网 下载好安装包然后双击安装即可。 安装的过程建议保持默认设置，一路 next！但出于操作方便考虑，可以将 PATH 选项按照下图选择：                                                                                              Jietu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-23T15:47:14.667Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frnzkgovawj30dt09ctcv.jpg">
+<meta property="og:updated_time" content="2018-05-25T15:19:19.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Node 的基本用法">
+<meta name="twitter:description" content="Node 的安装Node 的安装方式很简单，只要到 Node 的官网 下载好安装包然后双击安装即可。 安装的过程建议保持默认设置，一路 next！但出于操作方便考虑，可以将 PATH 选项按照下图选择：                                                                                              Jietu">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1frnzkgovawj30dt09ctcv.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
     
@@ -169,7 +172,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hello World</div>
+        <div class="flex-col header-title ellipsis">Node 的基本用法</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -191,13 +194,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">Node 的基本用法</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-06-18T05:14:20.000Z" itemprop="datePublished" class="page-time">
+                <time datetime="2016-06-18T06:22:46.000Z" itemprop="datePublished" class="page-time">
   2016-06-18
 </time>
 
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
 
             
         </h5>
@@ -214,20 +219,22 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-的安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">Node 的安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置-npm-淘宝镜像"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置 npm 淘宝镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-常用命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">Node 常用命令</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-hello-world"
+<article id="post-usage-node"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Hello World</h1>
+        <h1 class="post-card-title">Node 的基本用法</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016-06-18 13:14:20" datetime="2016-06-18T05:14:20.000Z"  itemprop="datePublished">2016-06-18</time>
+            <time class="post-time" title="2016-06-18 14:22:46" datetime="2016-06-18T06:22:46.000Z"  itemprop="datePublished">2016-06-18</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具/">工具</a></li></ul>
+
 
 
             
@@ -238,19 +245,34 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+            <h2 id="Node-的安装"><a href="#Node-的安装" class="headerlink" title="Node 的安装"></a>Node 的安装</h2><p>Node 的安装方式很简单，只要到 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node 的官网</a> 下载好安装包然后双击安装即可。</p>
+<p>安装的过程建议保持默认设置，一路 next！但出于操作方便考虑，可以将 PATH 选项按照下图选择：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ws1.sinaimg.cn/large/006tNc79gy1frnzkgovawj30dt09ctcv.jpg" alt="Jietu20170620-151437" title="">
+                </div>
+                <div class="image-caption">Jietu20170620-151437</div>
+            </figure>
+<p>出于安全考虑，Git 的默认设置下，只有在 Git Bash 中才能进行 Git 的相关操作。在安装过程中，可以选择 <code>Use Git from the Windows Command Prompt</code> ，将 Git 安装程序在系统 PATH 中加入 Git 的相关路径，这样就可以在 CMD 命令行下调用 Git，不需要打开 Git Bash。</p>
+<p>macOS 可以使用 homebrew 进行安装：</p>
+<pre><code class="bash">$ brew install node
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<p>安装完成后，检查是否安装成功，能获取对应版本号说明安装成功：</p>
+<pre><code class="bash">$ node -v
+$ npm -v
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
+<p>安装 cnpm，如有权限问题，使用 sudo 安装：</p>
+<pre><code class="bash">$ sudo npm install -g cnpm
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
+<h2 id="设置-npm-淘宝镜像"><a href="#设置-npm-淘宝镜像" class="headerlink" title="设置 npm 淘宝镜像"></a>设置 npm 淘宝镜像</h2><p>npm 默认源的下载速度可能很慢，建议替换成淘宝镜像：</p>
+<pre><code class="bash">$ npm config set registry &quot;https://registry.npm.taobao.org&quot;
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="Node-常用命令"><a href="#Node-常用命令" class="headerlink" title="Node 常用命令"></a>Node 常用命令</h2><pre><code class="bash"># 查看 node 的版本号
+$ node -v
+# 查看 npm 的版本号
+$ npm -v
+</code></pre>
 
         </div>
 
@@ -259,12 +281,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-05-23T15:47:14.667Z" itemprop="dateUpdated">2018-05-23 23:47:14</time>
+    最后更新时间：<time datetime="2018-05-25T15:19:19.282Z" itemprop="dateUpdated">2018-05-25 23:19:19</time>
 </span><br>
 
 
         
-        转载请注明出处：<a href="/posts/2016/hello-world/" target="_blank" rel="external">https://mingfengst.github.io/posts/2016/hello-world/</a>
+        转载请注明出处：<a href="/posts/2016/usage-node/" target="_blank" rel="external">https://mingfengst.github.io/posts/2016/usage-node/</a>
         
     </div>
     
@@ -285,6 +307,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -293,7 +317,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2016/hello-world/&title=《Hello World》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2016/usage-node/&title=《Node 的基本用法》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -303,22 +327,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2016/hello-world/&title=《Hello World》 — CMF | Blog&source=CMF" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2016/usage-node/&title=《Node 的基本用法》 — CMF | Blog&source=CMF" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2016/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2016/usage-node/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — CMF | Blog&url=https://mingfengst.github.io/posts/2016/hello-world/&via=https://mingfengst.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node 的基本用法》 — CMF | Blog&url=https://mingfengst.github.io/posts/2016/usage-node/&via=https://mingfengst.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2016/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2016/usage-node/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -338,16 +362,16 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/posts/2016/usage-node/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Node 的基本用法</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/2016/hello-world/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hello World</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -439,7 +463,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2016/hello-world/&title=《Hello World》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2016/usage-node/&title=《Node 的基本用法》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -449,22 +473,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2016/hello-world/&title=《Hello World》 — CMF | Blog&source=CMF" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2016/usage-node/&title=《Node 的基本用法》 — CMF | Blog&source=CMF" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2016/hello-world/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2016/usage-node/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World》 — CMF | Blog&url=https://mingfengst.github.io/posts/2016/hello-world/&via=https://mingfengst.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Node 的基本用法》 — CMF | Blog&url=https://mingfengst.github.io/posts/2016/usage-node/&via=https://mingfengst.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2016/hello-world/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2016/usage-node/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -475,7 +499,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQW7DMAxE0dz/0u62QGrnD6kUEPW9Ctok1vOCoTh6vfB1gev9/eQvv/9+923LLhkyZGzLIItLF/18l/dPPb8mD06GDBknMO5uTAooL5rpf8naZMiQIYM0dqSYkjJK7itDhgwZnJEulzeIMmTIkNHZxPIC+vz9/JF9ZS8uQ4aMDRl86v7/r7+Sb8iQIWMrxhVeaZzJi+PVuGTIkDGbUQsgeYTZCQ/SQFSGDBknMNKBWq0E146FoWZRhgwZoxm1ksfLKB/0pyHBh3XKkCHjGEZts9rfyqZsGTJkTGWkMSQvkbyJ5A3obfmWIUPGaAZp6VbloryJLK5EhgwZQxnplpKP5zoFN12JDBkyZjP6gQFvGUmL2Y8QZMiQMZXR2Xz2Y04eTnz4rAwZMkYzOmU3XUQ/BG3toWXIkLEhI40kO50mKejFRyNDhowDGHyjmN6sX6YXZA4yZMgYwUjDRTJKSx9QbZz3x++GDBkyxjF4fFgLEdOxWjrOi49cyJAhYwSDHyrlbVwaPPB287bgypAhYygj3cSujS3Tg2josIUMGTLGMdLB2Sp2OmhDvxsyZMgYxLjCa1U8ycsrosqQIWM0o58SdmLR1pa1BpMhQ8a2DD4OS8s0XzoKKVdN9WTIkLEtY9UBrxqptomVIUOGjPT4V+fIRacZlSFDhox06c+NXW20h94pQ4aMAxirWjr+HoLnIagMGTJmM2pHHDg73RinGBkyZIxm/ABDWCLg8OYpSwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQW7DMAwF0dz/0inQVYvCynxSDhpqvArS2tbTgqFIPh74en5fV9/8/fzzWn9P/rrtkiFDxscynsuLL5ogr+7im3JJlSFDxgGMdZBdL50E0NqmkLXJkCFDRifhWz+fb5kMGTJk1AIuTxPTjZAhQ4aMziF2HTp52OVvueUsLkOGjA9kpI2Bd36+sb8hQ4aMD2E8N13pFvBGJnq7DBkyRjN42sePo2mrgJBQIJYhQ8ZQBj9A7toCUkTjAf3X74YMGTJGM9ZDXSkyHbwg9wa/ADJkyBjKqDUp0wZAWiULNlGGDBmjGXxx/HF8bCJ9Y9yJlSFDxghGOmCRNgNqbYN4bTJkyBjNIMUvfrxM2SSYkiOxDBkyZjN2pYO1Lej8TzxmIUOGjBGMNOEjYxCkiPYIrxcBV4YMGeMYnXGHWlOhs0EBW4YMGUMZnUJbf+m1xFGGDBnnMPgNnaSQF9d4uL+sGsqQIWMQozbyVSvP8YXyVoEMGTJOYKTdTp4y8uXy4B53YmXIkDGU0W8rdtI+/uR4vkyGDBlDGTzI8jIcXxxvrMqQIeMEBukbpLw0yUvbqzJkyDiH0Snfd4pxPDSTZFGGDBmzGbVcK5jgCBeaDpnJkCHjHEYnyPJCf6eFid4oQ4aMAxidIFs7sqZR/8UTZMiQIaO06F3p5rZKoQwZMg5gpCX+dXpXWzoatpAhQ8ZQBh/q4iH4brYMGTLOYdQaA53jaB+zrb8hQ4aM/874ArPZIuDD4hCoAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
