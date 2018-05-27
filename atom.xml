@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mingfengst.github.io/"/>
-  <updated>2018-05-25T15:19:19.282Z</updated>
+  <updated>2018-05-27T15:37:22.629Z</updated>
   <id>https://mingfengst.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://mingfengst.github.io/posts/2016/usage-node/"/>
     <id>https://mingfengst.github.io/posts/2016/usage-node/</id>
     <published>2016-06-18T06:22:46.000Z</published>
-    <updated>2018-05-25T15:19:19.282Z</updated>
+    <updated>2018-05-27T15:37:22.629Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Node-的安装"><a href="#Node-的安装" class="headerlink" title="Node 的安装"></a>Node 的安装</h2><p>Node 的安装方式很简单，只要到 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node 的官网</a> 下载好安装包然后双击安装即可。</p><p>安装的过程建议保持默认设置，一路 next！但出于操作方便考虑，可以将 PATH 选项按照下图选择：</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://ws1.sinaimg.cn/large/006tNc79gy1frnzkgovawj30dt09ctcv.jpg" alt="Jietu20170620-151437" title="">                </div>                <div class="image-caption">Jietu20170620-151437</div>            </figure><p>出于安全考虑，Git 的默认设置下，只有在 Git Bash 中才能进行 Git 的相关操作。在安装过程中，可以选择 <code>Use Git from the Windows Command Prompt</code> ，将 Git 安装程序在系统 PATH 中加入 Git 的相关路径，这样就可以在 CMD 命令行下调用 Git，不需要打开 Git Bash。</p><p>macOS 可以使用 homebrew 进行安装：</p><pre><code class="bash">$ brew install node</code></pre><p>安装完成后，检查是否安装成功，能获取对应版本号说明安装成功：</p><pre><code class="bash">$ node -v$ npm -v</code></pre><p>安装 cnpm，如有权限问题，使用 sudo 安装：</p><pre><code class="bash">$ sudo npm install -g cnpm</code></pre><h2 id="设置-npm-淘宝镜像"><a href="#设置-npm-淘宝镜像" class="headerlink" title="设置 npm 淘宝镜像"></a>设置 npm 淘宝镜像</h2><p>npm 默认源的下载速度可能很慢，建议替换成淘宝镜像：</p><pre><code class="bash">$ npm config set registry &quot;https://registry.npm.taobao.org&quot;</code></pre><h2 id="Node-常用命令"><a href="#Node-常用命令" class="headerlink" title="Node 常用命令"></a>Node 常用命令</h2><pre><code class="bash"># 查看 node 的版本号$ node -v# 查看 npm 的版本号$ npm -v</code></pre>]]></content>
     
