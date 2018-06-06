@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>幸运转盘（canvas） | CMF | Blog | Just Do IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Demo,Canvas">
+    <meta name="description" content="前言作为消费者，我们经常可以在双 11、双 12、618 等节日中看到拼手气的「幸运转盘」活动，大家都想成为那个幸运儿。那么，今天我们就用 canvas 来实现一个「幸运转盘」的案例，都来成为那个幸运儿。 需求分析 在页面上提供文件选择入口，并说明使用方法； 读取按要求编写的 txt 文件，解析出奖项及其中奖概率； 获取 canvas 元素，绘制转盘，注册点击事件； 产生随机数，实现转盘过渡效果；">
+<meta name="keywords" content="Demo,Canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="幸运转盘（canvas）">
+<meta property="og:url" content="https://mingfengst.github.io/posts/2018/canvas-lucky-draw/index.html">
+<meta property="og:site_name" content="CMF | Blog">
+<meta property="og:description" content="前言作为消费者，我们经常可以在双 11、双 12、618 等节日中看到拼手气的「幸运转盘」活动，大家都想成为那个幸运儿。那么，今天我们就用 canvas 来实现一个「幸运转盘」的案例，都来成为那个幸运儿。 需求分析 在页面上提供文件选择入口，并说明使用方法； 读取按要求编写的 txt 文件，解析出奖项及其中奖概率； 获取 canvas 元素，绘制转盘，注册点击事件； 产生随机数，实现转盘过渡效果；">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606160131.png">
+<meta property="og:image" content="http://p9uf55ibt.bkt.clouddn.com/mingfengst/Gif180605235047.gif">
+<meta property="og:image" content="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606161207.png">
+<meta property="og:image" content="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606175322.png">
+<meta property="og:updated_time" content="2018-06-06T13:21:58.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="幸运转盘（canvas）">
+<meta name="twitter:description" content="前言作为消费者，我们经常可以在双 11、双 12、618 等节日中看到拼手气的「幸运转盘」活动，大家都想成为那个幸运儿。那么，今天我们就用 canvas 来实现一个「幸运转盘」的案例，都来成为那个幸运儿。 需求分析 在页面上提供文件选择入口，并说明使用方法； 读取按要求编写的 txt 文件，解析出奖项及其中奖概率； 获取 canvas 元素，绘制转盘，注册点击事件； 产生随机数，实现转盘过渡效果；">
+<meta name="twitter:image" content="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606160131.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="CMF | Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <!-- 修改部分：开始 -->
+    <!-- 自定义的代码语法高亮风格：引入 highlight.js -->
+    
+        <link rel="stylesheet" href="/plugins/highlight/monokai-sublime.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            Array.prototype.slice.call(document.querySelectorAll('pre code')).forEach(function(block) {
+                hljs.highlightBlock(block);
+            })
+        </script>
+        <style>
+            .post-content pre {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 5px;
+            }
+        </style>
+    
+    <!-- 主题默认的代码语法高亮风格：修改样式 -->
+    
+    <!-- 修改部分：结束 -->
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CMF</h5>
+          <a href="mailto:mingfengst@163.com" title="mingfengst@163.com" class="mail">mingfengst@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/demos"  >
+                <i class="icon icon-lg icon-file-code-o"></i>
+                Demos
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/mingfengst" target="_blank" >
+                <i class="icon icon-lg icon-github-alt"></i>
+                Gitee
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://cn.vuejs.org" target="_blank" >
+                <i class="icon icon-lg icon-vimeo"></i>
+                Vue
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://reactjs.org" target="_blank" >
+                <i class="icon icon-lg icon-registered"></i>
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                Custom
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">幸运转盘（canvas）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">幸运转盘（canvas）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-06T10:06:06.000Z" itemprop="datePublished" class="page-time">
+  2018-06-06
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/Web/">Web</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#需求分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">需求分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件入口"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">文件入口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#读取文件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">读取文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化转盘"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">初始化转盘</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绘制圆盘"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">绘制圆盘</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绘制指针"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">绘制指针</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义弹出框"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">自定义弹出框</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#链接"><span class="post-toc-number">4.</span> <span class="post-toc-text">链接</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-canvas-lucky-draw"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">幸运转盘（canvas）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-06 18:06:06" datetime="2018-06-06T10:06:06.000Z"  itemprop="datePublished">2018-06-06</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/Web/">Web</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为消费者，我们经常可以在双 11、双 12、618 等节日中看到拼手气的「幸运转盘」活动，大家都想成为那个幸运儿。那么，今天我们就用 canvas 来实现一个「幸运转盘」的案例，都来成为那个幸运儿。</p>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><ol>
+<li>在页面上提供文件选择入口，并说明使用方法；</li>
+<li>读取按要求编写的 txt 文件，解析出奖项及其中奖概率；</li>
+<li>获取 canvas 元素，绘制转盘，注册点击事件；</li>
+<li>产生随机数，实现转盘过渡效果；</li>
+<li>自定义弹出框，展示抽奖结果。</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="文件入口"><a href="#文件入口" class="headerlink" title="文件入口"></a>文件入口</h3><p>文件的入口实现起来非常简单，直接用 HTML 提供的 input 交互式控件，设置 type 属性值为 file，accept 属性值为 .txt，限制可接受的文件类型，并且给控件绑定 change 事件。</p>
+<p>另外，需要跟使用者说明文件规定的文本格式，以便能够正确解析出需要的数据。</p>
+<p>主要代码如下：</p>
+<pre><code class="html">&lt;div id=&quot;fileBox&quot; class=&quot;frame center&quot;&gt;
+    &lt;a class=&quot;btn no-select&quot;&gt;
+        &lt;input type=&quot;file&quot; accept=&quot;.txt&quot; onchange=&quot;getFileDate(event)&quot;&gt;选 择 文 件
+    &lt;/a&gt;
+    &lt;div id=&quot;describe&quot;&gt;
+        &lt;p&gt;文件要求：&lt;/p&gt;
+        &lt;p&gt;
+            格式：奖项=百分比(值越高越容易抽中)&lt;br&gt;
+            &lt;br&gt;
+            一等奖=5&lt;br&gt;
+            二等奖=7&lt;br&gt;
+            三等奖=10&lt;br&gt;
+            四等奖=15&lt;br&gt;
+            五等奖=18&lt;br&gt;
+            六等奖=20&lt;br&gt;
+            谢谢参与=25
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;canvasBox&quot; class=&quot;no-select hide&quot;&gt;
+    &lt;canvas id=&quot;plate&quot; width=&quot;600&quot; height=&quot;600&quot;&gt;
+        浏览器不支持！
+    &lt;/canvas&gt;
+    &lt;canvas id=&quot;pointer&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;
+        浏览器不支持！
+    &lt;/canvas&gt;
+    &lt;button id=&quot;btn&quot;&gt;开始&lt;/br&gt;抽奖&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<p>页面结构就这么简单，但是默认的样式实在看不下去，我们重新定义下样式吧。</p>
+<p>为了避免篇幅过长，css 代码就不在文章中贴出来了，代码已经托管到 GitHub，链接会在文章结尾给出。</p>
+<p>截图如下，是不是好看多了：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606160131.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>新建一个文本文件，内容如下：</p>
+<pre><code class="txt">一等奖=5
+二等奖=7
+三等奖=10
+四等奖=15
+五等奖=18
+六等奖=20
+谢谢参与=25
+</code></pre>
+<p>这里使用了符号 <code>=</code> 进行字符串的分割，左侧是「奖项」，右侧是此奖项的「中奖概率」。特别注意的是，中奖概率之和肯定不能低于或者超过 100%，而且「奖项」和「中奖概率」是一一对应的关系。</p>
+<p>HTML5 定义了 FileReader 用于读取存储在用户计算机上的文件的内容，正好符合我们的需求，部分代码如下：</p>
+<pre><code class="javascript">function getFileDate(e) {
+    let file = e.target.files[0];
+    if (file) {
+        let reader = new FileReader();
+        // 文件加载成功
+        reader.onload = function(event) {
+            // 处理数据
+            let data = handleData(event.target.result);
+            if (data !== undefined) {
+                initPlate(data);
+            } else {
+                // 文件数据出错，清空文件选择框的值
+                e.target.value = &quot;&quot;;
+            }
+        };
+        // 加载文本
+        reader.readAsText(file);
+    }
+}
+</code></pre>
+<p>得到文件的文本数据之后，需要对数据进行解析：</p>
+<pre><code class="javascript">function handleData(data) {
+    let itemArr = data.split(&quot;\n&quot;);
+    let result = {};
+    // 存放奖项
+    result.text = [];
+    // 存放百分比
+    result.radio = [];
+
+    for (let i = 0; i &lt; itemArr.length; i++) {
+        if (itemArr[i] === &quot;&quot;) {
+            continue;
+        } else {
+            let itemKey = itemArr[i].split(&quot;=&quot;)[0];
+            let itemVal = itemArr[i].split(&quot;=&quot;)[1];
+            result.text.push(itemKey);
+            if (itemVal !== &quot;&quot; &amp;&amp; !isNaN(+itemVal) &amp;&amp; typeof (+itemVal) == &quot;number&quot;) {
+                result.radio.push(+itemVal);
+            }
+        }
+    }
+    // 奖项和百分比不能一一对应
+    if (result.text.length !== result.radio.length) {
+        alert(&quot;文件错误！&quot;);
+        return;
+    // 百分比相加不等于 100
+    } else if (eval(result.radio.join(&quot;+&quot;)) !== 100) {
+        alert(&quot;百分比错误！&quot;);
+        return;
+    } else {
+        return result;
+    }
+}
+</code></pre>
+<p>如果能够正常解析数据，那么 result 的值是这样的：</p>
+<pre><code class="javascript">{
+    radio: [5, 7, 10, 15, 18, 20, 25],
+    text: [&quot;一等奖&quot;, &quot;二等奖&quot;, &quot;三等奖&quot;, &quot;四等奖&quot;, &quot;五等奖&quot;, &quot;六等奖&quot;, &quot;谢谢参与&quot;]
+}
+</code></pre>
+<h3 id="初始化转盘"><a href="#初始化转盘" class="headerlink" title="初始化转盘"></a>初始化转盘</h3><p>转盘主要分解为两部分：圆盘、指针。</p>
+<p>这两部分都是用 canvas 来绘制，所以我们要先获取到页面中的 canvas 元素，再分别绘制这两个部分。</p>
+<p>主要代码如下：</p>
+<pre><code class="javascript">function initPlate(data) {
+    let plateCanvas = document.getElementById(&quot;plate&quot;);
+    let plateCtx = plateCanvas.getContext(&quot;2d&quot;);
+    let pointerCanvas = document.getElementById(&quot;pointer&quot;);
+    let pointerCtx = pointerCanvas.getContext(&quot;2d&quot;);
+    let btn = document.getElementById(&quot;btn&quot;);
+
+    let lineW = 5;
+    let num = data.text.length;
+    let sectorDeg = 360 / num;
+    let deg = Math.PI / 180;
+    let round = 0;
+    let initCircleDeg = -90-sectorDeg/2;
+
+    initCircle();
+    initPointer();
+
+    // 注册点击事件
+    btn.onclick = function () {
+        let randomNum = Math.random()*100;    // [0, 100)
+        round++;
+
+        data.radio.reduce((prev, curv, i) =&gt; {
+            if (randomNum &gt;= prev &amp;&amp; randomNum &lt; prev + curv) {
+                runPlate(i, prev);
+            }
+            return prev + curv;
+        }, 0);
+    };
+
+    function runPlate(i) {
+        btn.setAttribute(&quot;disabled&quot;, &quot;true&quot;);
+        // 定时弹出框弹出
+        setTimeout(function () {
+            alert(data.text[i]);
+        }, 6500);
+        plateCanvas.style.transform = `rotate(${ initCircleDeg + 3600*round + sectorDeg*(num-i) }deg)`;
+    }
+}
+</code></pre>
+<p>可以看出，我们声明了一些变量，初始化线宽，初始角度等。圆盘和指针的绘制分别用函数 <code>initCircle</code> 和 <code>initPointer</code> 来完成，后面再单独说明。除此之外，声明了转盘转动的方法，并注册了点击事件，在点击事件的处理函数里产生了随机数。</p>
+<h3 id="绘制圆盘"><a href="#绘制圆盘" class="headerlink" title="绘制圆盘"></a>绘制圆盘</h3><p>圆盘是由多个扇形拼接而成的，解析完文件的文本数据之后，就可以知道扇形的数量、角度。由于每个扇形的绘制过程都是一个重复性的过程，所以我们封装一个方法来实现：</p>
+<pre><code class="javascript">/**
+ * @param ctx   canvas 的 context 实例
+ * @param x     x 轴坐标
+ * @param y     y 轴坐标
+ * @param r     半径
+ * @param sDeg  扇形开始的弧度
+ * @param eDeg  扇形结束的弧度
+ * @param text  文本
+ */
+function drawSector(ctx, x, y, r, sDeg, eDeg, text) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.beginPath();
+    ctx.arc(0, 0, r, sDeg, eDeg);
+    ctx.lineWidth = lineW;
+    ctx.strokeStyle = &quot;#40AA53&quot;;
+    ctx.stroke();
+
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = &quot;#40AA53&quot;;
+
+    ctx.save();
+    ctx.rotate(sDeg);
+    ctx.lineTo(0, 0);
+    ctx.stroke();
+    ctx.lineTo(r, 0);
+    ctx.stroke();
+    ctx.fillStyle = &quot;#0ff&quot;;
+    ctx.fill();
+    ctx.moveTo(0, 0);
+    ctx.restore();
+
+    ctx.save();
+    ctx.rotate(Math.PI/2 + eDeg-(eDeg-sDeg)/2);
+    ctx.fillStyle = &quot;#cc0000&quot;;
+    ctx.font = &quot;30px Microsoft YaHei&quot;;
+    ctx.textAlign = &quot;center&quot;;
+    ctx.fillText(text, 0, -r*2/3);
+    ctx.restore();
+
+    ctx.closePath();
+    ctx.restore();
+}
+</code></pre>
+<p>可能看代码不够形象，可以看看动画：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p9uf55ibt.bkt.clouddn.com/mingfengst/Gif180605235047.gif" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>封装完绘制扇形的方法，就可以根据「奖项」的数量来循环绘制扇形，从而拼接成圆盘：</p>
+<pre><code class="javascript">function initCircle() {
+    plateCanvas.style.transform = `rotate(${ initCircleDeg }deg)`;
+
+    let plateCenterX = plateCanvas.width/2;
+    let plateCenterY = plateCanvas.height/2;
+    let plateR = plateCenterX &lt; plateCenterY ? plateCenterX-lineW : plateCenterY-lineW;
+
+    for (let i = 0; i &lt; num; i++) {
+        drawSector(plateCtx, plateCenterX, plateCenterY, plateR, sectorDeg*i*deg, sectorDeg*(i+1)*deg, data.text[i]);
+    }
+    plateCanvas.style.transition = `transform 6s`;
+}
+</code></pre>
+<p>从上面的代码可以看出，为了让第一个「奖项」位于圆盘的正上方，将圆盘进行了旋转，并设置了 6s 的过渡时长，为后面转动转盘做准备。</p>
+<h3 id="绘制指针"><a href="#绘制指针" class="headerlink" title="绘制指针"></a>绘制指针</h3><p>指针是要固定要圆盘的中心的，并且将指针的方向指向了圆盘的正上方，实现的代码如下：</p>
+<pre><code class="javascript">function initPointer() {
+    pointerCanvas.style.transform = `translate(-50%, -50%) rotate(-90deg)`;
+
+    let pointerCenterX = pointerCanvas.width/2;
+    let pointerCenterY = pointerCanvas.height/2;
+    let pointerR = pointerCenterX &lt; pointerCenterY ? pointerCenterX/2 : pointerCenterY/2;
+
+    pointerCtx.save();
+    pointerCtx.beginPath();
+    pointerCtx.arc(pointerCenterX, pointerCenterY, pointerR, Math.PI/10, Math.PI*2-Math.PI/10);
+    pointerCtx.lineTo(pointerCenterX+pointerR*2, pointerCenterY);
+    pointerCtx.closePath();
+    pointerCtx.fillStyle = &quot;#ff0000&quot;;
+    pointerCtx.fill();
+}
+</code></pre>
+<p>到这里，绘制过程就完成了，来看看转盘的效果：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606161207.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="自定义弹出框"><a href="#自定义弹出框" class="headerlink" title="自定义弹出框"></a>自定义弹出框</h3><p>浏览器默认的弹出框样式跟我们案例的风格明显不符，我们来试下自定义下：</p>
+<pre><code class="javascript">&lt;script&gt;
+    window.alert = function (str) {
+        let alertBox = document.createElement(&quot;div&quot;);
+        alertBox.id = &quot;alertBox&quot;;
+        alertBox.className = &quot;frame center no-select&quot;;
+
+        let htmlStr = `
+            &lt;div id=&quot;title&quot;&gt;抽奖结果&lt;/div&gt;
+            &lt;div id=&quot;info&quot;&gt;${ str }&lt;/div&gt;
+            &lt;button class=&quot;btn&quot; onclick=&quot;doOk()&quot;&gt;确 定&lt;/button&gt;
+        `;
+        alertBox.innerHTML = htmlStr;
+        document.body.appendChild(alertBox);
+        this.doOk = function(){
+            document.body.removeChild(alertBox);
+            // 重新使能按钮
+            document.getElementById(&quot;btn&quot;).removeAttribute(&quot;disabled&quot;);
+        };
+        alertBox.focus();
+    }
+&lt;/script&gt;
+</code></pre>
+<p>直接上效果图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p9uf55ibt.bkt.clouddn.com/mingfengst/180606175322.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>怎么样？整体风格是不是好很多？</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><ul>
+<li><a href="https://github.com/mingfengst/demo/tree/master/%E5%B9%B8%E8%BF%90%E8%BD%AC%E7%9B%98" target="_blank" rel="noopener">看看有详细注释的源码</a></li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/mingfengst/demo/blob/master/%E5%B9%B8%E8%BF%90%E8%BD%AC%E7%9B%98/index.html" target="_blank" rel="noopener">在线预览，体验一波</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-06-06T13:21:58.879Z" itemprop="dateUpdated">2018-06-06 21:21:58</time>
+</span><br>
+
+
+        
+        转载请注明出处：<a href="/posts/2018/canvas-lucky-draw/" target="_blank" rel="external">https://mingfengst.github.io/posts/2018/canvas-lucky-draw/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://mingfengst.github.io">
+            <img src="/img/avatar.jpg" alt="CMF">
+            CMF
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Canvas/">Canvas</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Demo/">Demo</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/&title=《幸运转盘（canvas）》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/&title=《幸运转盘（canvas）》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《幸运转盘（canvas）》 — CMF | Blog&url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/&via=https://mingfengst.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/posts/2016/usage-node/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Node 的基本用法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Just Do IT
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <!-- <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        <i class="icon icon-user icon-pr"></i><span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>CMF &copy; 2016 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div> -->
+    <div class="bottom">
+        <p>
+            <span>CMF &copy; 2016 - 2018</span>
+            
+                <span id="busuanzi_container_site_uv" style='display:none'>
+                    <i class="icon icon-user icon-pr"></i><i><span id="busuanzi_value_site_uv"></span></i>
+                </span>
+                <span id="busuanzi_container_site_pv" style='display:none'>
+                    <i class="icon icon-eye icon-pr"></i><i><span id="busuanzi_value_site_pv"></span></i>
+                </span>
+            
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/&title=《幸运转盘（canvas）》 — CMF | Blog&pic=https://mingfengst.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/&title=《幸运转盘（canvas）》 — CMF | Blog&source=CMF" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《幸运转盘（canvas）》 — CMF | Blog&url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/&via=https://mingfengst.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://mingfengst.github.io/posts/2018/canvas-lucky-draw/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS27DMAwFwNz/0ummiwBFnEdSLWppvDIMx/ZowYifxyM+ni/H65Wf5/mVd895d+eCAwMD47aM5+VxfU/v+dUFit6OgYFxACMJhdUXV5fg+skfvhkDAwNjcN5bCAwMDIwJ4/pKkpT+i4CLgYFxQ0aSxOabvzyJzbehy3JxDAyMGzLyktnfn/9KfwMDA+NWjGfxSJLSPDTPv+f7ORgYGFsz8gDX26JNWgvV4Q8MDIy9GatGJVZR8/LcaPuIgYFxQ0a1HJ80BvKNY17mK3Q5MDAwtmD0Hp2PU1TDZXOADAMDY2tGb5BiEjrzX+VlPgwMjDMZeUpZDaaTMbIP78LAwDiGMZ/d6CWl+VJGARcDA2MjxmRTOGlJrsJgYGCcwCj0DYItWhWWtzaTZioGBsaujF55K0H2UtPmsAUGBsYBjGrqmN/TK+FVQzAGBsY5jGpYnG8l88hZ+BkGBsamjGQM65qdX68msVEqi4GBsTUjKf1XB0knZbVRIo2BgXEAIzmvprWrQvCymREMDIztGNUX9NqZ+UDGh9IeBgbGMYz84ybtyV5TobA1xMDA2IjxLB7VkYte+7NMxcDA2Jox6RLOw25egKv+MWBgYOzHyINsb+uWLEG+ZOWRCwwMjI0YeeDrheC1y4SBgYGxqmHQDJ15MwADAwOjGBAnQ2B5+H57JwYGxgGMvBmQD7bmy1FNpDEwME5jzGtZ1VLaJHEdNTUxMDDux/gCkBW8KnluDmcAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '等着你回来！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来！';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
